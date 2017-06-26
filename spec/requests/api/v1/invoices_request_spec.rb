@@ -20,15 +20,24 @@ describe "Invoice API request" do
   it "sends a single invoices " do
     invoice = create(:invoice)
 
-    get "/api/v1/invoice/#{invoice.id}"
+    get "/api/v1/invoices/#{invoice.id}"
 
     expect(response).to be_success
 
-    invoice = JSON.parse(response.body)
+    invoice_response = JSON.parse(response.body)
+    expect(invoice_response["customer_id"]).to eq(invoice.customer_id)
+    expect(invoice_response["merchant_id"]).to eq(invoice.merchant_id)
+    expect(invoice_response["status"]).to eq(invoice.status)
+  end
 
-    expect(invoice["customer_id"]).to have_key(invoice.customer_id)
-    expect(invoice["merchant_id"]).to have_key(invoice.merchant_id)
-    expect(invoice["status"]).to have_key(invoice.status)
+  it "finds based on a single parameter " do
+    invoice1, invoice2 = create_list(:invoice, 2)
+
+    get "/api/v1/invoices/find?customer_id=#{invoice1.customer.id}"
+    expect(response).to be_success
+    invoice_response = JSON.parse(response.body)
+    expect(invoice_response["id"]).to eq(invoice1.id)
+
   end
   
 
