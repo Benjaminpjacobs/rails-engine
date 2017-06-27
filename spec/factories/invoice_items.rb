@@ -3,6 +3,6 @@ FactoryGirl.define do
     item
     invoice
     quantity 1
-    unit_price 1
+    unit_price 1025
   end
 end
