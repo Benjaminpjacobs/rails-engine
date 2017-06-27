@@ -3,7 +3,6 @@ class Customer < ApplicationRecord
   has_many :merchants, through: :invoices
   has_many :transactions, through: :invoices
 
-
   def self.pending_invoices(merchant_id)
     find_by_sql("
       SELECT customers.id, customers.first_name, customers.last_name FROM customers INNER JOIN(
@@ -27,8 +26,8 @@ class Customer < ApplicationRecord
   end
 
   def self.favorite_customer(merchant_id)
-    joins('JOIN invoices ON invoices.customer_id = customers.id')
-    .joins('JOIN transactions ON invoices.id = transactions.invoice_id')
+    joins(:invoices)
+    .joins(invoices: [:transactions])
     .where('invoices.merchant_id = ? AND transactions.result = ?', merchant_id, 'success')
     .group('customers.id')
     .order('count(customers.id) desc')
