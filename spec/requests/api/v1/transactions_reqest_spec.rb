@@ -82,8 +82,21 @@ describe 'Transactions API' do
       expect(raw_transaction.first["id"]).to eq(transaction.id)
     end
 
-    it 'sends all transactions requested by result' do
+    it 'sends all transactions requested by result case matching' do
       result_params = { result: transaction.result }
+
+      get '/api/v1/transactions/find_all', params: result_params
+
+      expect(response).to be_success
+
+      raw_transaction = JSON.parse(response.body)
+      expect(raw_transaction.count).to eq(1)
+
+      expect(raw_transaction.first["id"]).to eq(transaction.id)
+    end
+
+    it 'sends all transactions requested by result case not matching' do
+      result_params = { result: transaction.result.upcase }
 
       get '/api/v1/transactions/find_all', params: result_params
 
@@ -162,8 +175,20 @@ describe 'Transactions API' do
       expect(raw_transaction["id"]).to eq(transaction.id)
     end
 
-    it 'sends first transaction requested by result' do
+    it 'sends first transaction requested by result case matching' do
       result_params = { result: transaction.result }
+
+      get '/api/v1/transactions/find', params: result_params
+
+      expect(response).to be_success
+
+      raw_transaction = JSON.parse(response.body)
+
+      expect(raw_transaction["id"]).to eq(transaction.id)
+    end
+
+    it 'sends first transaction requested by result case not matching' do
+      result_params = { result: transaction.result.upcase }
 
       get '/api/v1/transactions/find', params: result_params
 
