@@ -20,6 +20,11 @@ Rails.application.routes.draw do
       get '/items/find_all', to: "items#index"
 
       resources :items, only: [:index, :show]
+
+      get '/customers/find', to: 'customers#show'
+      get '/customers/find_all', to: 'customers#index'
+
+      resources :customers, only: [:index, :show]
     end
   end
 end
