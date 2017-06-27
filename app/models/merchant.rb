@@ -4,8 +4,8 @@ class Merchant < ApplicationRecord
   has_many :items
 
   def self.total_revenue(qty)
-    joins('JOIN invoices ON invoices.merchant_id = merchants.id')
-    .joins('JOIN transactions ON transactions.invoice_id = invoices.id')
+    joins(:invoices)
+    .joins(invoices: [:transactions])
     .where('transactions.result = ?', 'success')
     .joins('JOIN invoice_items ON invoice_items.invoice_id = invoices.id')
     .group('merchants.id')

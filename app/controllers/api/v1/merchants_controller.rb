@@ -1,17 +1,17 @@
 class Api::V1::MerchantsController < ApplicationController
+  include DateSearch
   def index
-    return render json: Merchant.where(id: params["id"]) if params["id"]
-    return render json: Merchant.where(name: params["name"]) if params["name"]
-    return render json: Merchant.where(created_at: params["created_at"].to_datetime.in_time_zone("UTC")) if params["created_at"]
-    return render json: Merchant.where(updated_at: params["updated_at"].to_datetime.in_time_zone("UTC")) if params["updated_at"]
-    render json: Merchant.all
+    return render json: Merchant.all if valid_search.empty?
+    render json: Merchant.where(valid_search)
   end
 
   def show
-    return render json: Merchant.find_by(id: params["id"]) if params["id"]
-    return render json: Merchant.find_by(name: params["name"]) if params["name"]
-    return render json: Merchant.find_by(created_at: params["created_at"].to_datetime.in_time_zone("UTC")) if params["created_at"]
-    return render json: Merchant.find_by(updated_at: params["updated_at"].to_datetime.in_time_zone("UTC")) if params["updated_at"]
-    render json: Merchant.find(params[:id])
+    render json: Merchant.find_by(valid_search)
   end
+
+  private
+
+    def valid_search
+      params.permit(:id, :name).merge(date_search)
+    end
 end

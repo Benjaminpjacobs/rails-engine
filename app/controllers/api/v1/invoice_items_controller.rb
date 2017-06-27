@@ -1,28 +1,19 @@
 class Api::V1::InvoiceItemsController < ApplicationController
+  include DateSearch
+  include UnitPrice
   def index
-    return render json: InvoiceItem.where(id: params[:id]) if params[:id]
-    return render json: InvoiceItem.where(item_id: params[:item_id]) if params[:item_id]
-    return render json: InvoiceItem.where(invoice_id: params[:invoice_id]) if params[:invoice_id]
-    return render json: InvoiceItem.where(unit_price: unit_price) if params[:unit_price]
-    return render json: InvoiceItem.where(quantity: params[:quantity]) if params[:quantity]
-    return render json: InvoiceItem.where(created_at: params[:created_at].to_datetime.in_time_zone("UTC")) if params[:created_at]
-    return render json: InvoiceItem.where(updated_at: params[:updated_at].to_datetime.in_time_zone("UTC")) if params[:updated_at]
-    return render json: InvoiceItem.all  
+    return render json: InvoiceItem.all if valid_search.empty?
+    render json: InvoiceItem.where(valid_search)
   end
 
   def show
-    return render json: InvoiceItem.find_by(item_id: params[:item_id]) if params[:item_id]
-    return render json: InvoiceItem.find_by(invoice_id: params[:invoice_id]) if params[:invoice_id]
-    return render json: InvoiceItem.find_by(unit_price: unit_price) if params[:unit_price]
-    return render json: InvoiceItem.find_by(quantity: params[:quantity]) if params[:quantity]
-    return render json: InvoiceItem.find_by(created_at: params[:created_at].to_datetime.in_time_zone("UTC")) if params[:created_at]
-    return render json: InvoiceItem.find_by(updated_at: params[:updated_at].to_datetime.in_time_zone("UTC")) if params[:updated_at]
-    return render json: InvoiceItem.find(params[:id])
+    render json: InvoiceItem.find_by(valid_search)
   end
   
   private
 
-    def unit_price
-      (params[:unit_price].to_f * 100).round
+    def valid_search
+      params.permit(:id, :item_id, :invoice_id, :quantity).merge(date_search).merge(unit_price)
     end
+      
 end
