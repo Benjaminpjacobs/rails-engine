@@ -1,7 +1,6 @@
 class Api::V1::ItemsController < ApplicationController
   include UnitPrice
 
-
   def index
     return render json: Item.created_at(params[:created_at].to_datetime) if params[:created_at]
     return render json: Item.updated_at(params[:updated_at].to_datetime) if params[:updated_at]
