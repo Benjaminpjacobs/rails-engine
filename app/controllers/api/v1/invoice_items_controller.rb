@@ -19,8 +19,10 @@ class Api::V1::InvoiceItemsController < ApplicationController
     return render json: InvoiceItem.find_by(updated_at: params[:updated_at].to_datetime.in_time_zone("UTC")) if params[:updated_at]
     return render json: InvoiceItem.find(params[:id])
   end
+  
+  private
 
-  def unit_price
-    (params[:unit_price].to_f * 100).round
-  end
+    def unit_price
+      (params[:unit_price].to_f * 100).round
+    end
 end
