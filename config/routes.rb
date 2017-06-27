@@ -7,6 +7,10 @@ Rails.application.routes.draw do
         get '/:id/customers_with_pending_invoices', to: "customers_with_pending_invoices#index"
         get '/:id/favorite_customer', to: "favorite_customer#show"
       end
+
+      namespace :items do
+        get 'most_revenue', to: 'most_revenue#index'
+      end
       
       namespace :customers do
         get '/:id/invoices', to: 'invoices#index'
