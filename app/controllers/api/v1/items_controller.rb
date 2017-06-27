@@ -8,7 +8,7 @@ class Api::V1::ItemsController < ApplicationController
     return render json: Item.where(merchant_id: params[:merchant_id]) if params[:merchant_id]
     return render json: Item.created_at(params[:created_at].to_datetime) if params[:created_at]
     return render json: Item.updated_at(params[:updated_at].to_datetime) if params[:updated_at]
-   return render json: Item.all
+    return render json: Item.all
   end
 
   def show
@@ -20,6 +20,7 @@ class Api::V1::ItemsController < ApplicationController
     return render json: Item.first_updated(params[:updated_at].to_datetime) if params[:updated_at]
     return render json: Item.find(params[:id])
   end
+
   private
 
     def unit_price
