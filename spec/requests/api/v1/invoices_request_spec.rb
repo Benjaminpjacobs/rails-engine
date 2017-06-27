@@ -65,12 +65,13 @@ describe "Invoice API request" do
   
   it "finds all based on a parameter " do
     date = "2017-06-26 22:58:34 UTC"
+    date2 = "2017-07-26 22:58:34 UTC"
+
     merchant1, merchant2 = create_list(:merchant, 2)
     customer1, customer2 = create_list(:customer, 2)
     
     invoice1, invoice2 = create_list(:invoice, 2, merchant_id: merchant1.id, customer_id: customer1.id, created_at: date, updated_at: date)
 
-    date2 = "2017-07-26 22:58:34 UTC"
     invoice3, invoice4 = create_list(:invoice, 2, merchant_id: merchant2.id, customer_id: customer2.id, created_at: date2, updated_at: date2)
 
 
@@ -101,26 +102,5 @@ describe "Invoice API request" do
     expect(invoice_response.count).to eq(2)
     expect(invoice_response.first["id"]).to eq(invoice3.id)
     expect(invoice_response.last["id"]).to eq(invoice4.id)
-
-    # get "/api/v1/invoices/find?merchant_id=#{invoice2.merchant_id}"
-    # expect(response).to be_success
-    # invoice_response = JSON.parse(response.body)
-    # expect(invoice_response["id"]).to eq(invoice2.id)
-
-    # get "/api/v1/invoices/find?status=#{invoice1.status}"
-    # expect(response).to be_success
-    # invoice_response = JSON.parse(response.body)
-    # expect(invoice_response["id"]).to eq(invoice1.id)
-    
-    # get "/api/v1/invoices/find?created_at=#{invoice2.created_at.to_s}"
-    # expect(response).to be_success
-    # invoice_response = JSON.parse(response.body)
-    # expect(invoice_response["id"]).to eq(invoice2.id)
-    
-    # get "/api/v1/invoices/find?updated_at=#{invoice1.updated_at.to_s}"
-    # expect(response).to be_success
-    # invoice_response = JSON.parse(response.body)
-    # expect(invoice_response["id"]).to eq(invoice1.id)
   end
-
 end
