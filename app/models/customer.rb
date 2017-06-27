@@ -22,6 +22,17 @@ class Customer < ApplicationRecord
         ON transactions.invoice_id = invoices.id 
         WHERE transactions.result = 'success') 
 
-      AS invoices ON invoices.customer_id = customers.id")
+      AS invoices ON invoices.customer_id = customers.id
+      ")
+  end
+
+  def self.favorite_customer(merchant_id)
+    joins('JOIN invoices ON invoices.customer_id = customers.id')
+    .where('invoices.merchant_id = ?', merchant_id)
+    .group('customers.id')
+    .order('count(customers.id) desc')
+    .limit(1)
+    .first
+    
   end
 end
