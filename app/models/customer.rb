@@ -28,11 +28,11 @@ class Customer < ApplicationRecord
 
   def self.favorite_customer(merchant_id)
     joins('JOIN invoices ON invoices.customer_id = customers.id')
-    .where('invoices.merchant_id = ?', merchant_id)
+    .joins('JOIN transactions ON invoices.id = transactions.invoice_id')
+    .where('invoices.merchant_id = ? AND transactions.result = ?', merchant_id, 'success')
     .group('customers.id')
     .order('count(customers.id) desc')
     .limit(1)
     .first
-    
   end
 end
