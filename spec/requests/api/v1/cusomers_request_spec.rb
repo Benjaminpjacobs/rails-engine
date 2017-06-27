@@ -55,7 +55,7 @@ describe 'Customers API' do
       expect(raw_customer.first["id"]).to eq(customer.id)
     end
 
-    it 'sends all customers requested by first_name' do
+    it 'sends all customers requested by first_name case matching' do
       first_name_params = { first_name: customer.first_name }
       get "/api/v1/customers/find_all", params: first_name_params
 
@@ -67,8 +67,32 @@ describe 'Customers API' do
       expect(raw_customer.first["id"]).to eq(customer.id)
     end
 
-    it 'sends all customers requested by last_name' do
+    it 'sends all customers requested by first_name case not matching' do
+      first_name_params = { first_name: customer.first_name.upcase }
+      get "/api/v1/customers/find_all", params: first_name_params
+
+      expect(response).to be_success
+
+      raw_customer = JSON.parse(response.body)
+      expect(raw_customer.count).to eq(1)
+
+      expect(raw_customer.first["id"]).to eq(customer.id)
+    end
+
+    it 'sends all customers requested by last_name case matching' do
       last_name_params = { last_name: customer.last_name }
+      get "/api/v1/customers/find_all", params: last_name_params
+
+      expect(response).to be_success
+
+      raw_customer = JSON.parse(response.body)
+      expect(raw_customer.count).to eq(1)
+
+      expect(raw_customer.first["id"]).to eq(customer.id)
+    end
+
+    it 'sends all customers requested by last_name case not matching' do
+      last_name_params = { last_name: customer.last_name.upcase }
       get "/api/v1/customers/find_all", params: last_name_params
 
       expect(response).to be_success
@@ -118,7 +142,7 @@ describe 'Customers API' do
       expect(raw_customer["id"]).to eq(customer.id)
     end
 
-    it 'sends first customer requested by first_name' do
+    it 'sends first customer requested by first_name matching' do
       first_name_params = { first_name: customer.first_name }
       get "/api/v1/customers/find", params: first_name_params
 
@@ -130,7 +154,19 @@ describe 'Customers API' do
       expect(raw_customer["first_name"]).to eq(customer.first_name)
     end
 
-    it 'sends first customer requested by last_name' do
+    it 'sends first customer requested by first_name not matching' do
+      first_name_params = { first_name: customer.first_name.upcase }
+      get "/api/v1/customers/find", params: first_name_params
+
+      expect(response).to be_success
+
+      raw_customer = JSON.parse(response.body)
+
+      expect(raw_customer["id"]).to eq(customer.id)
+      expect(raw_customer["first_name"]).to eq(customer.first_name)
+    end
+
+    it 'sends first customer requested by last_name case matching' do
       last_name_params = { last_name: customer.last_name }
       get "/api/v1/customers/find", params: last_name_params
 
@@ -139,6 +175,18 @@ describe 'Customers API' do
       raw_customer = JSON.parse(response.body)
 
       expect(raw_customer["id"]).to eq(customer.id)
+    end
+
+    it 'sends first customer requested by last_name not matching' do
+      last_name_params = { last_name: customer.last_name.upcase }
+      get "/api/v1/customers/find", params: last_name_params
+
+      expect(response).to be_success
+
+      raw_customer = JSON.parse(response.body)
+
+      expect(raw_customer["id"]).to eq(customer.id)
+      expect(raw_customer["last_name"]).to eq(customer.last_name)
     end
 
     it 'sends first customer requested by created_at' do

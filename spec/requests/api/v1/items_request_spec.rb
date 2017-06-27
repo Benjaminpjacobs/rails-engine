@@ -41,8 +41,18 @@ describe "Item API request" do
     expect(response).to be_success
     items_response = JSON.parse(response.body)
     expect(items_response["id"]).to eq(item.id)
+    
+    get "/api/v1/items/find?name=#{item.name.upcase}"
+    expect(response).to be_success
+    items_response = JSON.parse(response.body)
+    expect(items_response["id"]).to eq(item.id)
 
     get "/api/v1/items/find?description=#{item.description}"
+    expect(response).to be_success
+    items_response = JSON.parse(response.body)
+    expect(items_response["id"]).to eq(item.id)
+
+    get "/api/v1/items/find?description=#{item.description.upcase}"
     expect(response).to be_success
     items_response = JSON.parse(response.body)
     expect(items_response["id"]).to eq(item.id)
@@ -86,7 +96,21 @@ describe "Item API request" do
     expect(item_response.first["id"]).to eq(item1.id)
     expect(item_response.last["id"]).to eq(item2.id)
 
+    get "/api/v1/items/find_all?name=#{item1.name.upcase}"
+    expect(response).to be_success
+    item_response = JSON.parse(response.body)
+    expect(item_response.count).to eq(2)
+    expect(item_response.first["id"]).to eq(item1.id)
+    expect(item_response.last["id"]).to eq(item2.id)
+
     get "/api/v1/items/find_all?description=#{item3.description}"
+    expect(response).to be_success
+    item_response = JSON.parse(response.body)
+    expect(item_response.count).to eq(2)
+    expect(item_response.first["id"]).to eq(item3.id)
+    expect(item_response.last["id"]).to eq(item4.id)
+
+    get "/api/v1/items/find_all?description=#{item3.description.upcase}"
     expect(response).to be_success
     item_response = JSON.parse(response.body)
     expect(item_response.count).to eq(2)

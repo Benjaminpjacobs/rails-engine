@@ -52,7 +52,7 @@ describe 'Merchants API' do
       expect(raw_merchant.first["name"]).to eq(merchant.name)
     end
 
-    it 'sends all merchants requested by name' do
+    it 'sends all merchants requested by name case matching' do
       name_params = { name: merchant.name }
       get "/api/v1/merchants/find_all", params: name_params
 
@@ -63,6 +63,26 @@ describe 'Merchants API' do
 
       expect(raw_merchant.first["id"]).to eq(merchant.id)
       expect(raw_merchant.first["name"]).to eq(merchant.name)
+    end
+
+    it 'sends all merchants requested by name case not matching' do
+      name_params = { name: merchant.name.upcase }
+      get "/api/v1/merchants/find_all", params: name_params
+
+      expect(response).to be_success
+
+      raw_merchant = JSON.parse(response.body)
+      expect(raw_merchant.count).to eq(1)
+      expect(raw_merchant.first["id"]).to eq(merchant.id)
+
+      name_params = { name: merchant.name.capitalize }
+      get "/api/v1/merchants/find_all", params: name_params
+
+      expect(response).to be_success
+
+      raw_merchant = JSON.parse(response.body)
+      expect(raw_merchant.count).to eq(1)
+      expect(raw_merchant.first["id"]).to eq(merchant.id)
     end
 
     it 'sends all merchants requested by created_at' do
@@ -117,6 +137,24 @@ describe 'Merchants API' do
 
       expect(raw_merchant["id"]).to eq(merchant.id)
       expect(raw_merchant["name"]).to eq(merchant.name)
+    end
+
+    it 'sends first merchant requested by name case not matching' do
+      name_params = { name: merchant.name.upcase }
+      get "/api/v1/merchants/find", params: name_params
+
+      expect(response).to be_success
+
+      raw_merchant = JSON.parse(response.body)
+      expect(raw_merchant["id"]).to eq(merchant.id)
+
+      name_params = { name: merchant.name.capitalize }
+      get "/api/v1/merchants/find", params: name_params
+
+      expect(response).to be_success
+
+      raw_merchant = JSON.parse(response.body)
+      expect(raw_merchant["id"]).to eq(merchant.id)
     end
 
     it 'sends first merchant requested by created_at' do

@@ -51,6 +51,11 @@ describe "Invoice API request" do
     expect(response).to be_success
     invoice_response = JSON.parse(response.body)
     expect(invoice_response["id"]).to eq(invoice1.id)
+
+    get "/api/v1/invoices/find?status=#{invoice1.status.upcase}"
+    expect(response).to be_success
+    invoice_response = JSON.parse(response.body)
+    expect(invoice_response["id"]).to eq(invoice1.id)
     
     get "/api/v1/invoices/find?created_at=#{invoice2.created_at.to_s}"
     expect(response).to be_success
