@@ -9,6 +9,7 @@ class Api::V1::CustomersController < ApplicationController
   end
 
   private
+  
     def valid_search
     date_search = {}
     date_search[:created_at] = params["created_at"].to_datetime.in_time_zone("UTC") if params["created_at"]
