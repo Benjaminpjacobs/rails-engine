@@ -24,13 +24,14 @@ describe 'Merchant Revenue API' do
       merchant = create(:merchant)
       customer = create(:customer)
       invoice = create(:invoice, merchant_id: merchant.id, customer_id: customer.id)
+      create(:transaction, invoice_id: invoice.id)
       create(:invoice_item, invoice_id: invoice.id, unit_price: 1025, quantity: 5)
 
       get "/api/v1/merchants/#{merchant.id}/revenue"
 
       revenue = JSON.parse(response.body)
 
-      expect(revenue["total_revenue"]).to eq("51.25")
+      expect(revenue["revenue"]).to eq("51.25")
     end
   end
 end
