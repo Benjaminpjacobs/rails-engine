@@ -94,7 +94,7 @@ describe 'Merchants API' do
     date = "2017-06-26 22:58:34 UTC"
     let(:merchant) { create(:merchant, created_at: date, updated_at: date) }
 
-    it 'sends a merchant requested by id' do
+    it 'sends first merchant requested by id' do
       id_params = { id: merchant.id }
 
       get "/api/v1/merchants/find", params: id_params
@@ -107,7 +107,7 @@ describe 'Merchants API' do
       expect(raw_merchant["name"]).to eq(merchant.name)
     end
 
-    it 'sends a merchant requested by name' do
+    it 'sends first merchant requested by name' do
       name_params = { name: merchant.name }
       get "/api/v1/merchants/find", params: name_params
 
@@ -119,7 +119,7 @@ describe 'Merchants API' do
       expect(raw_merchant["name"]).to eq(merchant.name)
     end
 
-    it 'sends a merchant requested by created_at' do
+    it 'sends first merchant requested by created_at' do
       created_at_params = { created_at: merchant.created_at.to_s }
 
       get '/api/v1/merchants/find', params: created_at_params
@@ -130,7 +130,7 @@ describe 'Merchants API' do
       expect(raw_merchant["name"]).to eq(merchant.name)
     end
 
-    it 'sends a merchant requested by updated_at' do
+    it 'sends first merchant requested by updated_at' do
       updated_at_params = { updated_at: merchant.updated_at.to_s }
 
       get '/api/v1/merchants/find', params: updated_at_params
