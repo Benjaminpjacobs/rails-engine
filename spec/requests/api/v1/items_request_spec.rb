@@ -36,7 +36,7 @@ describe "Item API request" do
   it "finds based on a single parameter " do
     date = "2017-06-26 22:58:34 UTC"
     item = create(:item, created_at: date, updated_at: date)
-
+    
     get "/api/v1/items/find?name=#{item.name}"
     expect(response).to be_success
     items_response = JSON.parse(response.body)
@@ -57,7 +57,7 @@ describe "Item API request" do
     items_response = JSON.parse(response.body)
     expect(items_response["id"]).to eq(item.id)
 
-    get "/api/v1/items/find?unit_price=#{item.unit_price.to_s}"
+    get "/api/v1/items/find?unit_price=#{item.unit_price.to_f/100}"
     expect(response).to be_success
     items_response = JSON.parse(response.body)
     expect(items_response["id"]).to eq(item.id)
@@ -89,6 +89,13 @@ describe "Item API request" do
     item3, item4 = create_list(:item, 2, merchant_id: merchant2.id, name: "Thinger", description: "Also a cool thing", unit_price: 1000, created_at: date2, updated_at: date2)
 
 
+    get "/api/v1/items/find_all?id=#{item1.id}"
+    expect(response).to be_success
+    item_response = JSON.parse(response.body)
+    expect(item_response.count).to eq(1)
+    expect(item_response.first["id"]).to eq(item1.id)
+
+
     get "/api/v1/items/find_all?name=#{item1.name}"
     expect(response).to be_success
     item_response = JSON.parse(response.body)
@@ -110,6 +117,7 @@ describe "Item API request" do
     expect(item_response.first["id"]).to eq(item3.id)
     expect(item_response.last["id"]).to eq(item4.id)
 
+
     get "/api/v1/items/find_all?description=#{item3.description.upcase}"
     expect(response).to be_success
     item_response = JSON.parse(response.body)
@@ -117,7 +125,7 @@ describe "Item API request" do
     expect(item_response.first["id"]).to eq(item3.id)
     expect(item_response.last["id"]).to eq(item4.id)
 
-    get "/api/v1/items/find_all?unit_price=#{item1.unit_price}"
+    get "/api/v1/items/find_all?unit_price=#{item1.unit_price.to_f/100}"
     expect(response).to be_success
     item_response = JSON.parse(response.body)
     expect(item_response.count).to eq(2)
