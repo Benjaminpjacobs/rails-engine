@@ -41,4 +41,24 @@ describe "invoices/:id/association API requests" do
       expect(transaction).to have_key("result")
     end
   end
+
+  context "GET api/v1/invoices/:id/invoice_items" do
+    it "sends a list of invoice_items for requested invoice" do
+      create_list(:invoice_item, 5, invoice_id: invoice.id)
+      
+      get "/api/v1/invoices/#{invoice.id}/invoice_items"
+
+      expect(response).to be_success
+
+      invoice_items= JSON.parse(response.body)
+      invoice_item = invoice_items.first
+
+      expect(invoice_items.count).to eq(5)
+      expect(invoice_item).to have_key("invoice_id")
+      expect(invoice_item["invoice_id"]).to eq(invoice.id)
+      expect(invoice_item).to have_key("item_id")
+      expect(invoice_item).to have_key("quantity")
+      expect(invoice_item).to have_key("unit_price")
+    end
+  end
 end
