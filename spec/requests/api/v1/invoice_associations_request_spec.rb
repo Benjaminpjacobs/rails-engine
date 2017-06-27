@@ -63,7 +63,7 @@ describe "invoices/:id/association API requests" do
   end
 
   context "GET /api/v1/invoices/:id/customer" do
-    it "sends a customer for requested invoice" do
+    it "sends the customer for requested invoice" do
       customer = create(:customer)
       invoice1 = create(:invoice, customer_id: customer.id)
       
@@ -75,6 +75,21 @@ describe "invoices/:id/association API requests" do
 
       expect(customer).to have_key("first_name")
       expect(customer).to have_key("last_name")
+    end
+  end
+
+  context "GET /api/v1/invoices/:id/merchant" do
+    it "sends the merchant for requested invoice" do
+      merchant = create(:merchant)
+      invoice1 = create(:invoice, merchant_id: merchant.id)
+      
+      get "/api/v1/invoices/#{invoice1.id}/merchant"
+
+      expect(response).to be_success
+
+      merchant = JSON.parse(response.body)
+
+      expect(merchant).to have_key("name")
     end
   end
 end
