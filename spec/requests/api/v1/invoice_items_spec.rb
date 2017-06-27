@@ -72,8 +72,6 @@ describe "Invoice ite,s API request" do
     invoice_item3 = create(:invoice_item, item_id: item2.id, invoice_id: invoice1.id, unit_price: 1000, created_at: date, updated_at: date)
     invoice_item4 = create(:invoice_item, item_id: item2.id, invoice_id: invoice2.id, unit_price: 1000, created_at: date2, updated_at: date2)
 
-
-
     get "/api/v1/invoice_items/find_all?item_id=#{item1.id}"
     expect(response).to be_success
     ii_response = JSON.parse(response.body)

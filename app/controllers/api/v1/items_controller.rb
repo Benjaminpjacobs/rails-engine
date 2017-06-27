@@ -1,4 +1,5 @@
 class Api::V1::ItemsController < ApplicationController
+  
   def index
     return render json: Item.where(name: params[:name]) if params[:name]
     return render json: Item.where(description: params[:description]) if params[:description]
