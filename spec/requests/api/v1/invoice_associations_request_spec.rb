@@ -50,7 +50,7 @@ describe "invoices/:id/association API requests" do
 
       expect(response).to be_success
 
-      invoice_items= JSON.parse(response.body)
+      invoice_items = JSON.parse(response.body)
       invoice_item = invoice_items.first
 
       expect(invoice_items.count).to eq(5)
@@ -59,6 +59,22 @@ describe "invoices/:id/association API requests" do
       expect(invoice_item).to have_key("item_id")
       expect(invoice_item).to have_key("quantity")
       expect(invoice_item).to have_key("unit_price")
+    end
+  end
+
+  context "GET /api/v1/invoices/:id/customer" do
+    it "sends a customer for requested invoice" do
+      customer = create(:customer)
+      invoice1 = create(:invoice, customer_id: customer.id)
+      
+      get "/api/v1/invoices/#{invoice1.id}/customer"
+
+      expect(response).to be_success
+
+      customer = JSON.parse(response.body)
+
+      expect(customer).to have_key("first_name")
+      expect(customer).to have_key("last_name")
     end
   end
 end
