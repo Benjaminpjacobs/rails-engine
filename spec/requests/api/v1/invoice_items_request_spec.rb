@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "Invoice ite,s API request" do
+describe "Invoice items API request" do
   it "sends a list of invoice items " do
     create_list(:invoice_item, 3)
 
@@ -44,7 +44,12 @@ describe "Invoice ite,s API request" do
     ii_response = JSON.parse(response.body)
     expect(ii_response["id"]).to eq(invoice_item.id)
 
-    get "/api/v1/invoice_items/find?unit_price=#{invoice_item.unit_price.to_s}"
+    get "/api/v1/invoice_items/find?unit_price=#{invoice_item.unit_price.to_f/100}"
+    expect(response).to be_success
+    items_response = JSON.parse(response.body)
+    expect(items_response["id"]).to eq(invoice_item.id)
+
+    get "/api/v1/invoice_items/find?quantity=#{invoice_item.quantity}"
     expect(response).to be_success
     items_response = JSON.parse(response.body)
     expect(items_response["id"]).to eq(invoice_item.id)
@@ -87,7 +92,7 @@ describe "Invoice ite,s API request" do
     expect(ii_response.last["id"]).to eq(invoice_item3.id)
 
 
-    get "/api/v1/invoice_items/find_all?unit_price=#{invoice_item3.unit_price}"
+    get "/api/v1/invoice_items/find_all?unit_price=#{invoice_item3.unit_price.to_f/100}"
     expect(response).to be_success
     ii_response = JSON.parse(response.body)
     expect(ii_response.count).to eq(2)
