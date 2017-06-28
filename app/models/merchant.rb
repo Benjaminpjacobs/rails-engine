@@ -16,6 +16,7 @@ class Merchant < ApplicationRecord
   end
 
   def revenue
+    binding.pry
     invoices
     .joins(:transactions)
     .merge(Transaction.successful)
@@ -26,6 +27,4 @@ class Merchant < ApplicationRecord
   def display_revenue
     { "revenue" => (revenue.to_f/100).to_s }
   end
-
-  
 end

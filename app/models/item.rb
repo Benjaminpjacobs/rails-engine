@@ -6,13 +6,11 @@ class Item < ApplicationRecord
   has_many :invoice_items
   has_many :invoices, through: :invoice_items
 
-  scope :created_at, ->(time) { where("created_at = ?", time).order(:id) }
-  scope :updated_at, ->(time) { where("updated_at = ?", time).order(:id) }
-  scope :first_created, ->(time) { where("created_at = ?", time).order(:id).limit(1).first }
-  scope :first_updated, ->(time) { where("updated_at = ?", time).order(:id).limit(1).first }
+  default_scope {order(:id)}
 
   def self.most_revenue(limit)
-    joins(:invoice_items)
+    self.unscoped
+    .joins(:invoice_items)
     .group('items.id')
     .order('sum(invoice_items.unit_price * invoice_items.quantity) DESC')
     .limit(limit.to_i)
@@ -20,6 +18,7 @@ class Item < ApplicationRecord
 
   def revenue
     invoices
+    .unscoped
     .joins(:transactions)
     .merge(Transaction.successful)
     .joins(:invoice_items)
