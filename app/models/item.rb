@@ -9,9 +9,9 @@ class Item < ApplicationRecord
   default_scope {order(:id)}
 
   def self.most_revenue(limit)
-    self.unscoped
+    unscoped
     .joins(:invoice_items)
-    .group('items.id')
+    .group(:id)
     .order('sum(invoice_items.unit_price * invoice_items.quantity) DESC')
     .limit(limit.to_i)
   end
