@@ -33,9 +33,9 @@ class Customer < ApplicationRecord
 
   def self.favorite_customer(merchant_id)
     merchant_id = CleanInput.for_sql(merchant_id)
-    joins(:invoices)
-    .joins(invoices: [:transactions])
-    .where('invoices.merchant_id = ? AND transactions.result = ?', merchant_id, 'success')
+    joins(invoices: [:transactions])
+    .merge(Transaction.successful)
+    .where('invoices.merchant_id = ?', merchant_id)
     .group('customers.id')
     .order('count(customers.id) desc')
     .limit(1)

@@ -21,7 +21,7 @@ class Item < ApplicationRecord
   def revenue
     invoices
     .joins(:transactions)
-    .where("transaction.result = ?", "success")
+    .merge(Transaction.successful)
     .joins(:invoice_items)
     .sum("quantity * unit_price")
   end
