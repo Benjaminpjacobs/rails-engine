@@ -13,15 +13,28 @@ class Merchant < ApplicationRecord
     .limit(qty)
   end
 
-  def revenue
-    invoices
-    .joins(:transactions)
-    .where(transactions: { result: "success" })
-    .joins(:invoice_items)
-    .sum("quantity * unit_price")
+  def revenue(date=nil)
+    if date.nil?
+      display_revenue(
+        invoices
+        .joins(:transactions)
+        .where(transactions: { result: "success" })
+        .joins(:invoice_items)
+        .sum("quantity * unit_price")
+      )
+    else
+      display_revenue(
+        invoices
+        .where("invoices.created_at = ? ", date)
+        .joins(:transactions)
+        .where(transactions: { result: "success" })
+        .joins(:invoice_items)
+        .sum("quantity * unit_price")
+      )
+    end
   end
 
-  def display_revenue
-    { "revenue" => (revenue.to_f/100).to_s }
+  def display_revenue(value)
+    { "revenue" => (value.to_f/100).to_s }
   end
 end
