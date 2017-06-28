@@ -1,24 +1,14 @@
-# README
+# Rails Engine
 
-This README would normally document whatever steps are necessary to get the
-application up and running.
+* Ruby v2.4.1
 
-Things you may want to cover:
-
-* Ruby version
-
-* System dependencies
-
-* Configuration
-
-* Database creation
-
-* Database initialization
-
-* How to run the test suite
-
-* Services (job queues, cache servers, search engines, etc.)
-
-* Deployment instructions
-
-* ...
+1. Clone down rails-engine repo
+2. Clone down [rails-engine spec harness](https://github.com/turingschool/rales_engine_spec_harness)
+3. Navigate into railes-engine directory ```cd rails-engine```
+4. ```Bundle```
+5. Create database ```Rake db:setup```
+6. Import CSV files ```Rake import:all```
+7. Run the server ```rails server```
+8. In a different terminal navigate into rails-engine spec harness
+9. ```Bundle```
+10.```rake``` to run test suite.
