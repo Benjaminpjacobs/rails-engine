@@ -42,6 +42,7 @@ gem 'kaminari'
 gem 'haml'
 gem 'erb2haml', group: :development
 group :development, :test do
+  gem 'simplecov', :require => false, :group => :test
   gem 'rspec-rails'
   gem 'capybara'
   gem 'launchy'
