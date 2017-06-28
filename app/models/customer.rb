@@ -11,7 +11,7 @@ class Customer < ApplicationRecord
   def self.pending_invoices(merchant_id)
     merchant_id = CleanInput.for_sql(merchant_id)
     find_by_sql("
-      SELECT customers.id, customers.first_name, customers.last_name FROM customers INNER JOIN(
+      SELECT customers.* FROM customers INNER JOIN(
         SELECT invoices.id, invoices.customer_id 
         FROM invoices 
         INNER JOIN transactions 
