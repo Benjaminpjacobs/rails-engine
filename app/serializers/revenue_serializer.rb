@@ -1,8 +1,9 @@
 class RevenueSerializer < ActiveModel::Serializer
+  include PriceFormat
   attribute :revenue
 
   def revenue
-    (object.to_f/100).to_s
+    format_price(object)
   end
 
 end

@@ -27,8 +27,8 @@ class Item < ApplicationRecord
   end
 
   def revenue
-    invoices
-    .unscoped
+    unscoped
+    .invoices
     .joins(:transactions)
     .merge(Transaction.successful)
     .joins(:invoice_items)
