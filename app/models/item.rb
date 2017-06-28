@@ -17,4 +17,12 @@ class Item < ApplicationRecord
     .order('sum(invoice_items.unit_price * invoice_items.quantity) DESC')
     .limit(limit.to_i)
   end
+
+  def revenue
+    invoices
+    .joins(:transactions)
+    .where("transaction.result = ?", "success")
+    .joins(:invoice_items)
+    .sum("quantity * unit_price")
+  end
 end
