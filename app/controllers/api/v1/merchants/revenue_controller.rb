@@ -1,11 +1,12 @@
 class Api::V1::Merchants::RevenueController < ApplicationController
   include DateSearch
+
   def index
-    return render json: Invoice.total_revenue(valid_date) if valid_date
+    return render json: Invoice.calculate_revenue_by(valid_date), serializer: TotalRevenueSerializer
   end
   
   def show
-    render json: Merchant.find(params[:id]).display_revenue
+    render json: Merchant.find(params[:id]).revenue, serializer: RevenueSerializer
   end
 
   private 

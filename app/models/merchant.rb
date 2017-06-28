@@ -8,9 +8,9 @@ class Merchant < ApplicationRecord
   def self.total_revenue(qty)
     joins(:invoices)
     .joins(invoices: [:transactions])
-    .where('transactions.result = ?', 'success')
-    .joins('JOIN invoice_items ON invoice_items.invoice_id = invoices.id')
-    .group('merchants.id')
+    .merge(Transaction.successful)
+    .joins(invoices: [:invoice_items])
+    .group(:id)
     .order('SUM(invoice_items.unit_price * invoice_items.quantity) DESC')
     .limit(qty)
   end
@@ -18,12 +18,8 @@ class Merchant < ApplicationRecord
   def revenue
     invoices
     .joins(:transactions)
-    .where(transactions: { result: "success" })
+    .merge(Transaction.successful)
     .joins(:invoice_items)
     .sum("quantity * unit_price")
-  end
-
-  def display_revenue
-    { "revenue" => (revenue.to_f/100).to_s }
   end
 end
