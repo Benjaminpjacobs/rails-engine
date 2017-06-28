@@ -2,7 +2,7 @@
 
 * Ruby v2.4.1
 
-1. Clone down rails-engine repo
+1. Clone down this repo
 2. Clone down [rails-engine spec harness](https://github.com/turingschool/rales_engine_spec_harness)
 3. Navigate into railes-engine directory ```cd rails-engine```
 4. ```Bundle```
