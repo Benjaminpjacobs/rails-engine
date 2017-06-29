@@ -9,21 +9,40 @@
       "operations": [
         {
           "summary": "Fetches single merchant",
+          "notes": "This returns a single merchant record by attributes",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "find",
+              "type": "string",
+              "description": "name",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "find",
+              "type": "datetime",
+              "description": "created_at",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "find",
+              "type": "datetime",
+              "description": "updated_at",
+              "required": false
+            }
+          ],
           "responseMessages": [
             {
-              "code": 401,
+              "code": 404,
               "responseModel": null,
-              "message": "Unauthorized"
+              "message": "Not Found"
             },
             {
               "code": 406,
               "responseModel": null,
-              "message": "The request you made is not acceptable"
-            },
-            {
-              "code": 500,
-              "responseModel": null,
-              "message": "Requested Range Not Satisfiable"
+              "message": "Not Acceptable"
             }
           ],
           "nickname": "Api::V1::Merchants#show",
@@ -36,21 +55,47 @@
       "operations": [
         {
           "summary": "Fetches all merchants",
+          "notes": "This lists all merchants, sortable by record attributes",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "find",
+              "type": "string",
+              "description": "name",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "find",
+              "type": "integer",
+              "description": "id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "find",
+              "type": "datetime",
+              "description": "created_at",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "find",
+              "type": "datetime",
+              "description": "updated_at",
+              "required": false
+            }
+          ],
           "responseMessages": [
             {
-              "code": 401,
+              "code": 404,
               "responseModel": null,
-              "message": "Unauthorized"
+              "message": "Not Found"
             },
             {
               "code": 406,
               "responseModel": null,
-              "message": "The request you made is not acceptable"
-            },
-            {
-              "code": 500,
-              "responseModel": null,
-              "message": "Requested Range Not Satisfiable"
+              "message": "Not Acceptable"
             }
           ],
           "nickname": "Api::V1::Merchants#index",
