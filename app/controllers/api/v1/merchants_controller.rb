@@ -25,12 +25,14 @@ class Api::V1::MerchantsController < ApplicationController
   end
 
   def index
-    return render json: Merchant.all if valid_search.empty?
-    render json: Merchant.where(valid_search)
+    @merchants = valid_search.empty? ? Merchant.all : Merchant.where(valid_search)
+    return render json: @merchants unless @merchants.empty?
   end
 
   def show
-    render json: Merchant.find_by(valid_search)
+    @merchants = Merchant.find_by(valid_search)
+    return render json: @merchants if @merchants
+    not_found
   end
 
   private

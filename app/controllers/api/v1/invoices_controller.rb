@@ -27,12 +27,15 @@ class Api::V1::InvoicesController < ApplicationController
   end
 
   def index
-    return render json: Invoice.all if valid_search.empty?
-    render json: Invoice.where(valid_search)
+    @invoices = valid_search.empty? ? Invoice.all : Invoice.where(valid_search)
+    return render json: @invoices unless @invoices.empty?
+    not_found
   end
 
   def show
-    render json: Invoice.find_by(valid_search)
+    @invoices = Invoice.find_by(valid_search)
+    return render json: @invoices if @invoices
+    not_found
   end
 
   private

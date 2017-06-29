@@ -30,12 +30,15 @@ class Api::V1::ItemsController < ApplicationController
   end
 
   def index
-    return render json: Item.all if valid_search.empty?
-    render json: Item.where(valid_search)
+    @items = valid_search.empty? ? Item.all : Item.where(valid_search)
+    return render json: @items unless @items.empty?
+    not_found
   end
 
   def show
-    render json: Item.find_by(valid_search)
+    @items = Item.find_by(valid_search)
+    return render json: @items if @items
+    not_found
   end
 
   private
