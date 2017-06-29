@@ -6,11 +6,17 @@ class Api::V1::Merchants::MostItemsController < ApplicationController
   swagger_api :index do
     summary "Fetches merchants ranked by most items sold"
     notes "This returns the merchants listed by total items sold, can be limited in quantity"
+<<<<<<< HEAD
+    param :query, :quantity, :integer, :optional, "quantity"
+  end
+
+=======
     param :query, :date, :string, :optional, "quantity"
   end
 
 
 
+>>>>>>> 7898306cef579336f95f86e6d35b27e70e05e606
   def index
     return render json: Merchant.most_items(params[:quantity])
   end
