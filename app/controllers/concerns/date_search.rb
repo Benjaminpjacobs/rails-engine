@@ -7,5 +7,4 @@ module DateSearch
     search[:updated_at] = params["updated_at"].to_datetime if params["updated_at"]
     return search
   end
-  
 end

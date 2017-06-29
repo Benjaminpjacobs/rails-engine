@@ -5,5 +5,4 @@ class TotalRevenueSerializer < ActiveModel::Serializer
   def total_revenue
     format_price(object)
   end
-
 end
