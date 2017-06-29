@@ -26,6 +26,14 @@ class Item < ApplicationRecord
       .created_at
   end
 
+  def self.most_items(qty)
+   unscoped
+     .joins(:invoice_items)
+     .group(:id)
+     .order("sum(invoice_items.quantity) DESC") 
+     .limit(qty)
+  end
+
   def revenue
     unscoped
     .invoices
