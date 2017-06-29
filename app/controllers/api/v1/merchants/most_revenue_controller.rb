@@ -6,7 +6,7 @@ class Api::V1::Merchants::MostRevenueController < ApplicationController
   swagger_api :index do
     summary "Fetches merchants ranked by most revenue"
     notes "This returns the merchants listed by total revenue, can be limited in quantity"
-    param :query, :date, :string, :optional, "quantity"
+    param :query, :quantity, :integer, :optional, "quantity"
   end
 
   def index

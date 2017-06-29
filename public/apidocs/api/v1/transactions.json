@@ -1,133 +1,126 @@
 {
-  "apiVersion": "1.0",
-  "swaggerVersion": "1.2",
-  "basePath": "http://localhost:3000",
-  "resourcePath": "transactions",
-  "apis": [
-    {
-      "path": "/api/v1/transactions/find.json",
-      "operations": [
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.2",
+    "basePath": "http://localhost:3000",
+    "resourcePath": "transactions",
+    "apis": [{
+            "path": "/api/v1/transactions/find.json",
+            "operations": [{
+                "summary": "Fetches single transaction",
+                "notes": "This returns a single transaction record by attributes",
+                "parameters": [{
+                        "paramType": "query",
+                        "name": "id",
+                        "type": "integer",
+                        "description": "id",
+                        "required": false
+                    },
+                    {
+                        "paramType": "query",
+                        "name": "invoice_id",
+                        "type": "integer",
+                        "description": "invoice_id",
+                        "required": false
+                    },
+                    {
+                        "paramType": "query",
+                        "name": "credit_card_number",
+                        "type": "string",
+                        "description": "credit_card_number",
+                        "required": false
+                    },
+                    {
+                        "paramType": "query",
+                        "name": "result",
+                        "type": "string",
+                        "description": "result",
+                        "required": false
+                    },
+                    {
+                        "paramType": "query",
+                        "name": "created_at",
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "created_at",
+                        "required": false
+                    },
+                    {
+                        "paramType": "query",
+                        "name": "updated_at",
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "updated_at",
+                        "required": false
+                    }
+                ],
+                "responseMessages": [{
+                    "code": 404,
+                    "responseModel": null,
+                    "message": "Not Found"
+                }],
+                "nickname": "Api::V1::Transactions#show",
+                "method": "get"
+            }]
+        },
         {
-          "summary": "Fetches single transaction",
-          "notes": "This returns a single transaction record by attributes",
-          "parameters": [
-            {
-              "paramType": "query",
-              "name": "id",
-              "type": "integer",
-              "description": "id",
-              "required": false
-            },
-            {
-              "paramType": "query",
-              "name": "invoice_id",
-              "type": "integer",
-              "description": "invoice_id",
-              "required": false
-            },
-            {
-              "paramType": "query",
-              "name": "credit_card_number",
-              "type": "string",
-              "description": "credit_card_number",
-              "required": false
-            },
-            {
-              "paramType": "query",
-              "name": "result",
-              "type": "string",
-              "description": "result",
-              "required": false
-            },
-            {
-              "paramType": "query",
-              "name": "created_at",
-              "type": "string",
-              "description": "created_at",
-              "required": false
-            },
-            {
-              "paramType": "query",
-              "name": "updated_at",
-              "type": "string",
-              "description": "updated_at",
-              "required": false
-            }
-          ],
-          "responseMessages": [
-            {
-              "code": 404,
-              "responseModel": null,
-              "message": "Not Found"
-            }
-          ],
-          "nickname": "Api::V1::Transactions#show",
-          "method": "get"
+            "path": "/api/v1/transactions/find_all.json",
+            "operations": [{
+                "summary": "Fetches all transactions",
+                "notes": "This lists all transactions, sortable by record attributes",
+                "parameters": [{
+                        "paramType": "query",
+                        "name": "invoice_id",
+                        "type": "integer",
+                        "description": "invoice_id",
+                        "required": false
+                    },
+                    {
+                        "paramType": "query",
+                        "name": "credit_card_number",
+                        "type": "string",
+                        "description": "credit_card_number",
+                        "required": false
+                    },
+                    {
+                        "paramType": "query",
+                        "name": "result",
+                        "type": "string",
+                        "description": "result",
+                        "required": false
+                    },
+                    {
+                        "paramType": "query",
+                        "name": "id",
+                        "type": "integer",
+                        "description": "id",
+                        "required": false
+                    },
+                    {
+                        "paramType": "query",
+                        "name": "created_at",
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "created_at",
+                        "required": false
+                    },
+                    {
+                        "paramType": "query",
+                        "name": "updated_at",
+                        "type": "string",
+                        "format": "date-time",
+                        "description": "updated_at",
+                        "required": false
+                    }
+                ],
+                "responseMessages": [{
+                    "code": 404,
+                    "responseModel": null,
+                    "message": "Not Found"
+                }],
+                "nickname": "Api::V1::Transactions#index",
+                "method": "get"
+            }]
         }
-      ]
-    },
-    {
-      "path": "/api/v1/transactions/find_all.json",
-      "operations": [
-        {
-          "summary": "Fetches all transactions",
-          "notes": "This lists all transactions, sortable by record attributes",
-          "parameters": [
-            {
-              "paramType": "query",
-              "name": "invoice_id",
-              "type": "integer",
-              "description": "invoice_id",
-              "required": false
-            },
-            {
-              "paramType": "query",
-              "name": "credit_card_number",
-              "type": "string",
-              "description": "credit_card_number",
-              "required": false
-            },
-            {
-              "paramType": "query",
-              "name": "result",
-              "type": "string",
-              "description": "result",
-              "required": false
-            },
-            {
-              "paramType": "query",
-              "name": "id",
-              "type": "integer",
-              "description": "id",
-              "required": false
-            },
-            {
-              "paramType": "query",
-              "name": "created_at",
-              "type": "string",
-              "description": "created_at",
-              "required": false
-            },
-            {
-              "paramType": "query",
-              "name": "updated_at",
-              "type": "string",
-              "description": "updated_at",
-              "required": false
-            }
-          ],
-          "responseMessages": [
-            {
-              "code": 404,
-              "responseModel": null,
-              "message": "Not Found"
-            }
-          ],
-          "nickname": "Api::V1::Transactions#index",
-          "method": "get"
-        }
-      ]
-    }
-  ],
-  "authorizations": null
+    ],
+    "authorizations": null
 }
