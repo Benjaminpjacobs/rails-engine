@@ -7,10 +7,10 @@ Swagger::Docs::Config.register_apis({
     :attributes => {
       :info => {
         "title" => "Rails Engine",
-        "description" => "Test",
+        "description" => "Endpoints for record, relationship and bussiness logic for included sales dataset",
         "contact" => "benjaminpjacobs@gmail.com",
-        # "license" => "MIT",
-        # "licenseUrl" => "https://opensource.org/licenses/MIT"
+        "license" => "MIT",
+        "licenseUrl" => "https://opensource.org/licenses/MIT"
       }
     }
   }
