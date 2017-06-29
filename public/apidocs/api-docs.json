@@ -1,131 +1,132 @@
 {
-  "apiVersion": "1.0",
-  "swaggerVersion": "1.2",
-  "basePath": "http://localhost:3000",
-  "apis": [
-    {
-      "path": "/apidocs/api/v1/merchants/items.{format}",
-      "description": "Merchants Items Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/merchants/invoices.{format}",
-      "description": "Merchants Invoices Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/merchants/customers_with_pending_invoices.{format}",
-      "description": "Merchants Customers With Pending Invoices Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/merchants/favorite_customer.{format}",
-      "description": "Merchants Favorite Customer Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/merchants/revenue.{format}",
-      "description": "Merchants Revenue Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/merchants/most_revenue.{format}",
-      "description": "Merchants Most Revenue Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/merchants/most_items.{format}",
-      "description": "Merchants Most Items Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/items/most_revenue.{format}",
-      "description": "Items Most Revenue Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/customers/invoices.{format}",
-      "description": "Customers Invoices Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/customers/transactions.{format}",
-      "description": "Customers Transactions Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/customers/favorite_merchant.{format}",
-      "description": "Customers Favorite Merchant Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/transactions/invoices.{format}",
-      "description": "Transactions Invoices Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/invoices/items.{format}",
-      "description": "Invoices Items Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/invoices/transactions.{format}",
-      "description": "Invoices Transactions Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/invoices/invoice_items.{format}",
-      "description": "Invoices Invoice items Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/invoices/customers.{format}",
-      "description": "Invoices Customer Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/invoices/merchants.{format}",
-      "description": "Invoices Merchant Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/invoice_items/invoices.{format}",
-      "description": "Invoice Items Invoices Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/invoice_items/items.{format}",
-      "description": "Invoice Items Items Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/items/invoice_items.{format}",
-      "description": "Items Invoice Items Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/items/merchants.{format}",
-      "description": "Items Merchants Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/items/best_day.{format}",
-      "description": "Items Best Day Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/items/most_items.{format}",
-      "description": "Items Most Items Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/customers.{format}",
-      "description": "Customers Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/merchants.{format}",
-      "description": "Merchants Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/items.{format}",
-      "description": "Items Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/invoices.{format}",
-      "description": "Invoices Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/invoice_items.{format}",
-      "description": "Invoice Items Controller"
-    },
-    {
-      "path": "/apidocs/api/v1/transactions.{format}",
-      "description": "Transactions Controller"
+    "apiVersion": "1.0",
+    "swaggerVersion": "1.2",
+    "basePath": "http://localhost:3000",
+    "apis": [{
+            "path": "/apidocs/api/v1/merchants/items.{format}",
+            "description": "Merchants Items Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/merchants/invoices.{format}",
+            "description": "Merchants Invoices Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/merchants/customers_with_pending_invoices.{format}",
+            "description": "Merchants Customers With Pending Invoices Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/merchants/favorite_customer.{format}",
+            "description": "Merchants Favorite Customer Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/merchants/revenue.{format}",
+            "description": "Merchants Revenue Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/merchants/most_revenue.{format}",
+            "description": "Merchants Most Revenue Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/merchants/most_items.{format}",
+            "description": "Merchants Most Items Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/items/most_revenue.{format}",
+            "description": "Items Most Revenue Controller"
+        },
+        { <<
+            << << < HEAD "path": "/apidocs/api/v1/customers/invoices.{format}",
+            "description": "Customers Invoices Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/customers/transactions.{format}",
+            "description": "Customers Transactions Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/customers/favorite_merchant.{format}",
+            "description": "Customers Favorite Merchant Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/transactions/invoices.{format}",
+            "description": "Transactions Invoices Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/invoices/items.{format}",
+            "description": "Invoices Items Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/invoices/transactions.{format}",
+            "description": "Invoices Transactions Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/invoices/invoice_items.{format}",
+            "description": "Invoices Invoice items Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/invoices/customers.{format}",
+            "description": "Invoices Customer Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/invoices/merchants.{format}",
+            "description": "Invoices Merchant Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/invoice_items/invoices.{format}",
+            "description": "Invoice Items Invoices Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/invoice_items/items.{format}",
+            "description": "Invoice Items Items Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/items/invoice_items.{format}",
+            "description": "Items Invoice Items Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/items/merchants.{format}",
+            "description": "Items Merchants Controller"
+        },
+        {
+
+            "path": "/apidocs/api/v1/items/best_day.{format}",
+            "description": "Items Best Day Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/items/most_items.{format}",
+            "description": "Items Most Items Controller"
+        },
+        {
+
+            "path": "/apidocs/api/v1/customers.{format}",
+            "description": "Customers Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/merchants.{format}",
+            "description": "Merchants Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/items.{format}",
+            "description": "Items Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/invoices.{format}",
+            "description": "Invoices Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/invoice_items.{format}",
+            "description": "Invoice Items Controller"
+        },
+        {
+            "path": "/apidocs/api/v1/transactions.{format}",
+            "description": "Transactions Controller"
+        }
+    ],
+    "authorizations": null,
+    "info": {
+        "title": "Rails Engine",
+        "description": "Endpoints for record, relationship and business logic for included sales data-set",
+        "contact": "benjaminpjacobs@gmail.com",
+        "license": "MIT",
+        "licenseUrl": "https://opensource.org/licenses/MIT"
     }
-  ],
-  "authorizations": null,
-  "info": {
-    "title": "Rails Engine",
-    "description": "Endpoints for record, relationship and business logic for included sales data-set",
-    "contact": "benjaminpjacobs@gmail.com",
-    "license": "MIT",
-    "licenseUrl": "https://opensource.org/licenses/MIT"
-  }
 }
