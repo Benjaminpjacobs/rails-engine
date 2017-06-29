@@ -10,6 +10,22 @@
     {
       "path": "/api/v1/merchants.{format}",
       "description": "Merchants"
+    },
+    {
+      "path": "/api/v1/items.{format}",
+      "description": "Items"
+    },
+    {
+      "path": "/api/v1/invoices.{format}",
+      "description": "Invoices"
+    },
+    {
+      "path": "/api/v1/invoice_items.{format}",
+      "description": "Invoice items"
+    },
+    {
+      "path": "/api/v1/transactions.{format}",
+      "description": "Transactions"
     }
   ],
   "authorizations": null,

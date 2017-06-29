@@ -2,27 +2,34 @@
   "apiVersion": "1.0",
   "swaggerVersion": "1.2",
   "basePath": "http://localhost:3000",
-  "resourcePath": "customers",
+  "resourcePath": "invoice_items",
   "apis": [
     {
-      "path": "/api/v1/customers/find",
+      "path": "/api/v1/invoice_items/find",
       "operations": [
         {
-          "summary": "Fetches single customer",
-          "notes": "This returns a single customer record by attributes",
+          "summary": "Fetches single invoice item",
+          "notes": "This returns a single invoice item record by attributes",
           "parameters": [
             {
               "paramType": "query",
               "name": "find",
-              "type": "string",
-              "description": "first_name",
+              "type": "integer",
+              "description": "item_id",
               "required": false
             },
             {
               "paramType": "query",
               "name": "find",
-              "type": "string",
-              "description": "last_name",
+              "type": "integer",
+              "description": "invoice_id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "find",
+              "type": "integer",
+              "description": "quantity",
               "required": false
             },
             {
@@ -52,30 +59,37 @@
               "message": "Not Acceptable"
             }
           ],
-          "nickname": "Api::V1::Customers#show",
+          "nickname": "Api::V1::InvoiceItems#show",
           "method": "get"
         }
       ]
     },
     {
-      "path": "/api/v1/customers/find_all",
+      "path": "/api/v1/invoice_items/find_all",
       "operations": [
         {
-          "summary": "Fetches all customers",
-          "notes": "This lists all customers, sortable by record attributes",
+          "summary": "Fetches all invoice items",
+          "notes": "This lists all invoice items, sortable by record attributes",
           "parameters": [
             {
               "paramType": "query",
               "name": "find",
-              "type": "string",
-              "description": "first_name",
+              "type": "integer",
+              "description": "item_id",
               "required": false
             },
             {
               "paramType": "query",
               "name": "find",
-              "type": "string",
-              "description": "last_name",
+              "type": "integer",
+              "description": "invoice_id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "find",
+              "type": "integer",
+              "description": "quantity",
               "required": false
             },
             {
@@ -112,7 +126,7 @@
               "message": "Not Acceptable"
             }
           ],
-          "nickname": "Api::V1::Customers#index",
+          "nickname": "Api::V1::InvoiceItems#index",
           "method": "get"
         }
       ]

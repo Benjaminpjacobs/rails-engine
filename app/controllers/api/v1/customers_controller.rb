@@ -6,18 +6,27 @@ class Api::V1::CustomersController < ApplicationController
 
   swagger_api :index do
     summary "Fetches all customers"
-    response :unauthorized
-    response :not_acceptable, "The request you made is not acceptable"
-    response :requested_range_not_satisfiable
+    notes "This lists all customers, sortable by record attributes"
+    param :query, :find, :string, :optional, "first_name"
+    param :query, :find, :string, :optional, "last_name" 
+    param :query, :find, :integer, :optional, "id"
+    param :query, :find, :datetime, :optional, "created_at"
+    param :query, :find, :datetime, :optional, "updated_at"
+    response :not_found
+    response :not_acceptable
   end
 
   swagger_api :show do
     summary "Fetches single customer"
-    response :unauthorized
-    response :not_acceptable, "The request you made is not acceptable"
-    response :requested_range_not_satisfiable
+    notes "This returns a single customer record by attributes"
+    param :path , :id, :integer, :required, "id"
+    param :query, :find, :string, :optional, "first_name"
+    param :query, :find, :string, :optional, "last_name" 
+    param :query, :find, :datetime, :optional, "created_at"
+    param :query, :find, :datetime, :optional, "updated_at"
+    response :not_found
+    response :not_acceptable
   end
-
 
   def index
     return render json: Customer.all if valid_search.empty?
