@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe '/customers/:id/association API requests' do
+describe 'Customers Relationship Endpoints' do
   context 'GET /api/v1/customers/:id/invoices' do
     it 'returns a collection of associated invoices' do
       customer = create(:customer)

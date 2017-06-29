@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe '/merchant/:id/association API requests' do
+describe 'Merchants Relationship Endpoints' do
   context 'GET /api/v1/merchants/:id/items' do
     it 'returns a collection of items associated with that merchant' do
       merchant = create(:merchant)

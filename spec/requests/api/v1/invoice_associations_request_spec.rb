@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "/invoices/:id/association API requests" do
+describe "Invoices Relationship Endpoints" do
   let(:invoice) { create(:invoice) }
 
   context "GET /api/v1/invoices/:id/transactions" do

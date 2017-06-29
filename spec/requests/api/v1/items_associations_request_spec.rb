@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "items/:id/association API requests" do
+describe "Item Relationship Endpoints" do
   let(:item) { create(:item) }
   
   context "GET /api/v1/items/:id/invoice_items" do

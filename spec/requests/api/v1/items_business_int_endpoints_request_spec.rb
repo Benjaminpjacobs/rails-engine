@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "items business intelligence API requests" do
+describe "Items Business Intelligence API requests" do
   context 'GET /api/v1/items/most_items?quantity=x' do
     it 'returns the top x item instances ranked by total number sold' do
       item1, item2, item3 = create_list(:item, 3)

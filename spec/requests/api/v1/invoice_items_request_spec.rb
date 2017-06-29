@@ -180,4 +180,15 @@ describe "Invoice Items API" do
       expect(ii_response.last["id"]).to eq(invoice_item4.id)
     end
   end
+  context 'GET /api/v1/invoice_items/random' do
+    it 'sends a random invoice_item' do
+      create_list(:invoice_item, 5)
+      get '/api/v1/invoice_items/random'
+
+      expect(response).to be_success
+
+      raw_data = JSON.parse(response.body)
+      expect(raw_data).to have_key("id")
+    end
+  end
 end
