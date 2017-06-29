@@ -1,7 +1,7 @@
 class Api::V1::Items::BestDayController < ApplicationController
   include Swagger::Docs::Methods
 
-  swagger_controller :items, "Items Best Day Controller"
+  swagger_controller :items, "Items Best Day Controller", resource_path: "items"
 
   swagger_api :show do
     summary "Fetches the date with the most sales for the given item using the invoice date."

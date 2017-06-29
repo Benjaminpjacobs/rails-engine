@@ -1,7 +1,7 @@
 class Api::V1::Invoices::TransactionsController < ApplicationController
   include Swagger::Docs::Methods
   
-  swagger_controller :invoices, "Invoices Transactions Controller"
+  swagger_controller :invoices, "Invoices Transactions Controller", resource_path: "invoices"
 
   swagger_api :index do
     summary "Fetches a collection of associated transactions"

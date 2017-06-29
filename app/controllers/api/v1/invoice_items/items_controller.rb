@@ -1,7 +1,7 @@
 class Api::V1::InvoiceItems::ItemsController < ApplicationController
   include Swagger::Docs::Methods
   
-  swagger_controller :invoice_items, "Invoice Items Items Controller"
+  swagger_controller :invoice_items, "Invoice Items Items Controller", resource_path: "invoice_items"
 
   swagger_api :show do
     summary "Fetches the associated item"

@@ -2,7 +2,7 @@
   "apiVersion": "1.0",
   "swaggerVersion": "1.2",
   "basePath": "https://sales-engine-api.herokuapp.com",
-  "resourcePath": "items",
+  "resourcePath": "invoice_items",
   "apis": [
     {
       "path": "/api/v1/invoice_items/{id}/item.json",

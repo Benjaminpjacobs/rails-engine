@@ -1,7 +1,7 @@
 class Api::V1::Customers::TransactionsController < ApplicationController
   include Swagger::Docs::Methods
   
-  swagger_controller :customers, "Customers Transactions Controller"
+  swagger_controller :customers, "Customers Transactions Controller", resource_path: "customers"
 
   swagger_api :index do
     summary "Fetches a collection of associated transactions"

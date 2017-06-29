@@ -1,7 +1,7 @@
 class Api::V1::Items::MerchantsController < ApplicationController
   include Swagger::Docs::Methods
 
-  swagger_controller :items, "Items Merchants Controller"
+  swagger_controller :items, "Items Merchants Controller", resource_path: "items"
 
   swagger_api :show do
     summary "Fetches the associated merchant"

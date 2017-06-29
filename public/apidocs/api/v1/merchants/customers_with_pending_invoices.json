@@ -2,7 +2,7 @@
   "apiVersion": "1.0",
   "swaggerVersion": "1.2",
   "basePath": "https://sales-engine-api.herokuapp.com",
-  "resourcePath": "customers_with_pending_invoices",
+  "resourcePath": "merchants",
   "apis": [
     {
       "path": "/api/v1/merchants/{id}/customers_with_pending_invoices.json",
