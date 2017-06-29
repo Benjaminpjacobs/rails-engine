@@ -12,3 +12,5 @@ A sales data api built with Rails 5.1 and Ruby 2.4.1. This engine serves up reco
 8. In another terminal window navigate into the rails-engine spec harness directory
 9. ```bundle```
 10.```rake``` to run test suite.
+
+Interact with (Swagger UI)[https://sales-engine-api.herokuapp.com/apidocs/index.html#!/customers] for this API.
