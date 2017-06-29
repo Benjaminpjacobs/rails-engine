@@ -1,6 +1,6 @@
 require 'rails_helper'
 
-describe "invoice_items/:id/association API requests" do
+describe "InvoiceItems Relationship Endpoints" do
 
   context "GET /api/v1/invoice_items/:id/invoice" do
     it "sends the invoice for requested invoice_item" do

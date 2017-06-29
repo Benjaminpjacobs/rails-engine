@@ -223,4 +223,15 @@ describe 'Transactions API' do
       expect(raw_transaction["id"]).to eq(transaction.id)
     end
   end
+  context 'GET /api/v1/transactions/random' do
+    it 'sends a random transaction' do
+      create_list(:transaction, 5)
+      get '/api/v1/transactions/random'
+
+      expect(response).to be_success
+
+      raw_data = JSON.parse(response.body)
+      expect(raw_data).to have_key("id")
+    end
+  end
 end

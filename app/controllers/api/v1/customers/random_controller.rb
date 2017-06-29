@@ -8,6 +8,6 @@ class Api::V1::Customers::RandomController < ApplicationController
   end
 
   def show
-    render json: InvoiceCustomerItem.order("RANDOM()").limit(1).first
+    render json: Customer.order("RANDOM()").limit(1).first
   end
 end
