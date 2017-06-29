@@ -1,11 +1,11 @@
 class Api::V1::Invoices::ItemsController < ApplicationController
   include Swagger::Docs::Methods
   
-  swagger_controller :invoices_items, "Invoices Items Controller"
+  swagger_controller :invoices, "Invoices Items Controller", resource_path: "invoices"
 
   swagger_api :index do
-    summary "Fetches items associated with specific invoice"
-    param :query, :id, :integer, :optional, "id"
+    summary "Fetches a collection of associated items"
+    param :query, :id, :integer, :required, "id"
 
     response :not_found
   end

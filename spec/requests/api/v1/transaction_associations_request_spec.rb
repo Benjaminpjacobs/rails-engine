@@ -1,6 +1,7 @@
 require 'rails_helper'
 
-describe 'Transactions Invoice Request' do
+describe 'Transactions Relationship Endpoints' do
+  context 'GET /api/v1/transations/:id/invoice' do
     it 'sends associated invoice' do
       invoice = create(:invoice)
       transaction = create(:transaction, invoice_id: invoice.id)
@@ -16,3 +17,4 @@ describe 'Transactions Invoice Request' do
       expect(invoice_response["status"]).to eq(invoice.status)
     end
   end
+end

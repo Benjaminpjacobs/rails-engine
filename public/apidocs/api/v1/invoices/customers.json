@@ -1,10 +1,35 @@
 {
   "apiVersion": "1.0",
   "swaggerVersion": "1.2",
-  "basePath": "http://localhost:3000",
-  "resourcePath": "customers",
+  "basePath": "https://sales-engine-api.herokuapp.com",
+  "resourcePath": "invoices",
   "apis": [
-
+    {
+      "path": "/api/v1/invoices/{id}/customer.json",
+      "operations": [
+        {
+          "summary": "Fetches the associated customer",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "id",
+              "type": "integer",
+              "description": "id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "nickname": "Api::V1::Invoices::Customers#show",
+          "method": "get"
+        }
+      ]
+    }
   ],
   "authorizations": null
 }

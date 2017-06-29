@@ -1,11 +1,11 @@
 class Api::V1::Merchants::MostRevenueController < ApplicationController
   include Swagger::Docs::Methods
 
-  swagger_controller :merchants_most_revenue, 'Merchants Most Revenue Controller'
+  swagger_controller :merchants, 'Merchants Most Revenue Controller', resource_path: "merchants"
 
   swagger_api :index do
-    summary "Fetches merchants ranked by most revenue"
-    notes "This returns the merchants listed by total revenue, can be limited in quantity"
+    summary "Fetches the top merchants ranked by total revenue"
+    notes "This query can be limited in quantity"
     param :query, :quantity, :integer, :optional, "quantity"
   end
 

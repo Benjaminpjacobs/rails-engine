@@ -1,10 +1,10 @@
 class Api::V1::Items::MostRevenueController < ApplicationController
   include Swagger::Docs::Methods
 
-  swagger_controller :items_most_revenue, "Items Most Revenue Controller"
+  swagger_controller :items, "Items Most Revenue Controller", resource_path: "items"
 
   swagger_api :index do
-    summary "Fetches items ranked by most revenue generated"
+    summary "Fetches the top items ranked by total revenue generated"
     param :query, :id, :integer, :optional, "id"
 
     response :not_found
