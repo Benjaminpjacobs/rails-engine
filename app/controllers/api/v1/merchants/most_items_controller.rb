@@ -9,8 +9,6 @@ class Api::V1::Merchants::MostItemsController < ApplicationController
     param :query, :date, :string, :optional, "quantity"
   end
 
-
-
   def index
     return render json: Merchant.most_items(params[:quantity])
   end

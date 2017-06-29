@@ -36,6 +36,18 @@
       "description": "Items Most Revenue Controller"
     },
     {
+      "path": "/apidocs/api/v1/customers/invoices.{format}",
+      "description": "Customers Invoices Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/customers/transactions.{format}",
+      "description": "Customers Transactions Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/customers/favorite_merchant.{format}",
+      "description": "Customers Favorite Merchant Controller"
+    },
+    {
       "path": "/apidocs/api/v1/transactions/invoices.{format}",
       "description": "Transactions Invoices Controller"
     },
@@ -58,6 +70,14 @@
     {
       "path": "/apidocs/api/v1/invoices/merchants.{format}",
       "description": "Invoices Merchant Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/invoice_items/invoices.{format}",
+      "description": "Invoice Items Invoices Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/invoice_items/items.{format}",
+      "description": "Invoice Items Items Controller"
     },
     {
       "path": "/apidocs/api/v1/items/invoice_items.{format}",

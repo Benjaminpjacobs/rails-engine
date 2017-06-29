@@ -1,5 +1,4 @@
 class Api::V1::Merchants::FavoriteCustomerController < ApplicationController
-
   include Swagger::Docs::Methods
 
     swagger_controller :merchants_favorite, 'Merchants Favorite Customer Controller'
