@@ -2,10 +2,10 @@ class Api::V1::Items::MostItemsController < ApplicationController
 
   include Swagger::Docs::Methods
   
-  swagger_controller :items_most_sole, "Items Most Items Controller"
+  swagger_controller :items, "Items Most Items Controller", resource_path: "items"
 
   swagger_api :index do
-    summary "Fetches items ranked by number of items sold"
+    summary "Fetches the top item instances ranked by total number sold"
     param :query, :id, :integer, :optional, "id"
 
     response :not_found

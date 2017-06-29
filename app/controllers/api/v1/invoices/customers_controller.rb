@@ -1,11 +1,11 @@
 class Api::V1::Invoices::CustomersController < ApplicationController
   include Swagger::Docs::Methods
   
-  swagger_controller :invoice_customer, "Invoices Customer Controller"
+  swagger_controller :invoices, "Invoices Customer Controller", resource_path: "invoices"
 
-  swagger_api :index do
-    summary "Fetches customer associated with specific invoice"
-    param :query, :id, :integer, :optional, "id"
+  swagger_api :show do
+    summary "Fetches the associated customer"
+    param :query, :id, :integer, :required, "id"
 
     response :not_found
   end
