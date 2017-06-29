@@ -8,9 +8,11 @@
 /.bundle
 
 # Ignore all logfiles and tempfiles.
+.DS_STORE
 /log/*
 /tmp/*
 !/log/.keep
 !/tmp/.keep
-
 .byebug_history
+#ignore simplecov test coverage
+/coverage
