@@ -4,6 +4,50 @@
   "basePath": "http://localhost:3000",
   "apis": [
     {
+      "path": "/apidocs/api/v1/merchants/items.{format}",
+      "description": "Merchants Items Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/merchants/invoices.{format}",
+      "description": "Merchants Invoices Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/merchants/customers_with_pending_invoices.{format}",
+      "description": "Merchants Customers With Pending Invoices Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/merchants/favorite_customer.{format}",
+      "description": "Merchants Favorite Customer Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/merchants/revenue.{format}",
+      "description": "Merchants Revenue Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/merchants/most_revenue.{format}",
+      "description": "Merchants Most Revenue Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/merchants/most_items.{format}",
+      "description": "Merchants Most Items Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/items/most_revenue.{format}",
+      "description": "Items Most Revenue Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/transactions/invoices.{format}",
+      "description": "Transactions Invoices Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/items/invoice_items.{format}",
+      "description": "Items Invoice Items Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/items/merchants.{format}",
+      "description": "Items Merchants Controller"
+    },
+    {
       "path": "/apidocs/api/v1/customers.{format}",
       "description": "Customers Controller"
     },

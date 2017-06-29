@@ -1,0 +1,29 @@
+{
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "http://localhost:3000",
+  "resourcePath": "items",
+  "apis": [
+    {
+      "path": "/api/v1/merchants/{id}/items.json",
+      "operations": [
+        {
+          "summary": "Fetches items associated with single merchant",
+          "notes": "This returns the items sold by a single merchant",
+          "parameters": [
+            {
+              "paramType": "path",
+              "name": "id",
+              "type": "integer",
+              "description": "id",
+              "required": true
+            }
+          ],
+          "nickname": "Api::V1::Merchants::Items#index",
+          "method": "get"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
+}
