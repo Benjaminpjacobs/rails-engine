@@ -24,35 +24,31 @@ class Merchant < ApplicationRecord
       .limit(qty)
   end
 
-
   def revenue(date=nil)
-    if date.nil?
-      invoices
+      collect_invoices(date)
       .joins(:transactions)
       .merge(Transaction.successful)
       .joins(:invoice_items)
       .sum("quantity * unit_price")
-    else
-      invoices
-      .where("invoices.created_at = ? ", date)
-      .joins(:transactions)
-      .where(transactions: { result: "success" })
-      .joins(:invoice_items)
-      .sum("quantity * unit_price")
+  end
+
+  def favorite_customer
+    customers
+    .joins(invoices: [:transactions])
+    .merge(Transaction.successful)
+    .group(:id)
+    .order('count(customers.id) desc')
+    .limit(1)
+    .first
+  end
+
+  private
+
+    def collect_invoices(date)
+      if date
+        self.invoices.where("invoices.created_at = ? ", date)
+      else
+        self.invoices
+      end
     end
-  end
-
-  def self.favorite_merchant(customer_id)
-    customer_id = CleanInput.for_sql(customer_id)
-    joins(invoices: :transactions)
-      .merge(Transaction.successful)
-      .where('invoices.customer_id = ?', customer_id)
-      .group(:id)
-      .order("count(invoices.id) DESC")
-      .limit(1).first
-  end
-
-  def display_revenue(value)
-    { "revenue" => (value.to_f/100).to_s }
-  end
 end

@@ -31,14 +31,12 @@ class Customer < ApplicationRecord
       ")
   end
 
-  def self.favorite_customer(merchant_id)
-    merchant_id = CleanInput.for_sql(merchant_id)
-    joins(invoices: [:transactions])
-    .merge(Transaction.successful)
-    .where('invoices.merchant_id = ?', merchant_id)
-    .group(:id)
-    .order('count(customers.id) desc')
-    .limit(1)
-    .first
+  def favorite_merchant
+      merchants
+      .joins(invoices: :transactions)
+      .merge(Transaction.successful)
+      .group(:id)
+      .order("count(invoices.id) DESC")
+      .limit(1).first
   end
 end

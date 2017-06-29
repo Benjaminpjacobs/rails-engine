@@ -8,7 +8,7 @@ class Invoice < ApplicationRecord
   has_many :items, through: :invoice_items
   has_many :transactions
 
-  def self.calculate_revenue_by(date)
+  def self.total_revenue(date)
     joins(:invoice_items)
     .where("invoices.created_at = ? ", date)
     .sum('unit_price * quantity')

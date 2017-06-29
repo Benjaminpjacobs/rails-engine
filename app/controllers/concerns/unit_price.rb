@@ -10,5 +10,4 @@ module UnitPrice
   def unit_price_convert
     (params[:unit_price].to_f * 100).round
   end
-  
 end
