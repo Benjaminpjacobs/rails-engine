@@ -153,4 +153,15 @@ describe "Item API request" do
     expect(item_response.first["id"]).to eq(item3.id)
     expect(item_response.last["id"]).to eq(item4.id)
   end
+  context 'GET /api/v1/items/random' do
+    it 'sends a random item' do
+      create_list(:item, 5)
+      get '/api/v1/items/random'
+
+      expect(response).to be_success
+
+      raw_data = JSON.parse(response.body)
+      expect(raw_data).to have_key("id")
+    end
+  end
 end

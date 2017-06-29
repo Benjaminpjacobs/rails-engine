@@ -1,5 +1,16 @@
 class Api::V1::Invoices::TransactionsController < ApplicationController
+  include Swagger::Docs::Methods
+  
+  swagger_controller :invoices_transactions, "Invoices Transactions Controller"
+
+  swagger_api :index do
+    summary "Fetches transactions associated with specific invoice"
+    param :query, :id, :integer, :optional, "id"
+
+    response :not_found
+  end
+
   def index
-    render json: Transaction.where(invoice_id: params[:id].to_i)
+    render json: Invoice.find(params[:id]).transactions
   end
 end

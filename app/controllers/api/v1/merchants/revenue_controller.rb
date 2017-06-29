@@ -1,5 +1,22 @@
 class Api::V1::Merchants::RevenueController < ApplicationController
   include DateSearch
+  include Swagger::Docs::Methods
+
+  swagger_controller :merchants_revenue, 'Merchants Revenue Controller'
+
+  swagger_api :index do
+    summary "Fetches total revenue across merchants"
+    notes "This returns a single value for total revenue, can be scoped to a date"
+    param :query, :date, :string, :optional, "date"
+  end
+
+  swagger_api :show do
+    summary "Fetches total revenue across merchants"
+    notes "This returns a single value for total revenue, can be scoped to a date"
+    param :path, :id, :integer, :required, "id"
+    param :query, :date, :string, :optional, "date"
+  end
+
 
   def index
     return render json: Invoice.total_revenue(valid_date), serializer: TotalRevenueSerializer

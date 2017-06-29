@@ -2,14 +2,14 @@
   "apiVersion": "1.0",
   "swaggerVersion": "1.2",
   "basePath": "http://localhost:3000",
-  "resourcePath": "customers",
+  "resourcePath": "random",
   "apis": [
     {
-      "path": "/api/v1/customers/find_all",
+      "path": "/api/v1/invoices/random.json",
       "operations": [
         {
-          "summary": "Generates a JWT to be used for authenticated requests",
-          "nickname": "Api::V1::Customers#index",
+          "summary": "Fetches random Invoice",
+          "nickname": "Api::V1::Invoices::Random#show",
           "method": "get"
         }
       ]
