@@ -1,10 +1,10 @@
 require 'rails_helper'
 
-describe "invoices/:id/association API requests" do
+describe "/invoices/:id/association API requests" do
   let(:invoice) { create(:invoice) }
 
-  context "GET api/v1/invoices/:id/transactions" do
-    it "sends a list of transactions for requested invoice" do
+  context "GET /api/v1/invoices/:id/transactions" do
+    it "returns a collection of associated transactions" do
       create_list(:transaction, 5, invoice_id: invoice.id)
       
       get "/api/v1/invoices/#{invoice.id}/transactions"
@@ -22,8 +22,8 @@ describe "invoices/:id/association API requests" do
     end
   end
 
-  context "GET api/v1/invoices/:id/invoice_items" do
-    it "sends a list of invoice_items for requested invoice" do
+  context "GET /api/v1/invoices/:id/invoice_items" do
+    it "returns a collection of associated invoice items" do
       create_list(:invoice_item, 5, invoice_id: invoice.id)
       
       get "/api/v1/invoices/#{invoice.id}/invoice_items"
@@ -43,7 +43,7 @@ describe "invoices/:id/association API requests" do
   end
 
   context "GET /api/v1/invoices/:id/items" do
-    it "sends a list of items for requested invoice" do
+    it "returns a collection of associated items" do
       item1, item2, item3 = create_list(:item, 3)
       invoice.items.append(item1, item2, item3)
 
@@ -63,7 +63,7 @@ describe "invoices/:id/association API requests" do
   end
 
   context "GET /api/v1/invoices/:id/customer" do
-    it "sends the customer for requested invoice" do
+    it "returns the associated customer" do
       customer = create(:customer)
       invoice1 = create(:invoice, customer_id: customer.id)
       
@@ -79,7 +79,7 @@ describe "invoices/:id/association API requests" do
   end
 
   context "GET /api/v1/invoices/:id/merchant" do
-    it "sends the merchant for requested invoice" do
+    it "returns the associated merchant" do
       merchant = create(:merchant)
       invoice1 = create(:invoice, merchant_id: merchant.id)
       
