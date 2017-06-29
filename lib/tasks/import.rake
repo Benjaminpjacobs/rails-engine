@@ -2,14 +2,15 @@ require 'csv'
 
 namespace :import do
   desc "Create all survey templates"
-  task :all => [:import_customers, :import_merchants, :import_invoices, :import_transactions,:import_items, :import_invoice_items]
 
-  # task :regenerate do
-  #   Rails.env = "development"
-  #   Rake::Task["db:reset"].invoke
-  #   Rails.env = "test"
-  #   Rake::Task["db:reset"].invoke
-  # end
+  task :regenerate do
+    Rails.env = "development"
+    Rake::Task["db:reset"].invoke
+    Rails.env = "test"
+    Rake::Task["db:reset"].invoke
+  end
+
+  task :all => [:import_customers, :import_merchants, :import_invoices, :import_transactions,:import_items, :import_invoice_items]
   
   task :import_customers => [:environment] do
     puts "importing customers..."
