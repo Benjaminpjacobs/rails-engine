@@ -217,7 +217,7 @@ describe 'Customers API' do
 
       expect(response).to be_success
 
-      raw_data = JSON>parse(response.body)
+      raw_data = JSON.parse(response.body)
       
       expect(raw_data).to have_key("id")
     end
