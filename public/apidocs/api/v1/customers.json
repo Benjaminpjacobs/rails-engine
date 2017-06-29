@@ -5,25 +5,53 @@
   "resourcePath": "customers",
   "apis": [
     {
-      "path": "/api/v1/customers/find",
+      "path": "/api/v1/customers/find.json",
       "operations": [
         {
           "summary": "Fetches single customer",
+          "notes": "This returns a single customer record by attributes",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "id",
+              "type": "integer",
+              "description": "id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "first_name",
+              "type": "string",
+              "description": "first_name",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "last_name",
+              "type": "string",
+              "description": "last_name",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "created_at",
+              "type": "string",
+              "description": "created_at",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "updated_at",
+              "type": "string",
+              "description": "updated_at",
+              "required": false
+            }
+          ],
           "responseMessages": [
             {
-              "code": 401,
+              "code": 404,
               "responseModel": null,
-              "message": "Unauthorized"
-            },
-            {
-              "code": 406,
-              "responseModel": null,
-              "message": "The request you made is not acceptable"
-            },
-            {
-              "code": 500,
-              "responseModel": null,
-              "message": "Requested Range Not Satisfiable"
+              "message": "Not Found"
             }
           ],
           "nickname": "Api::V1::Customers#show",
@@ -32,25 +60,53 @@
       ]
     },
     {
-      "path": "/api/v1/customers/find_all",
+      "path": "/api/v1/customers/find_all.json",
       "operations": [
         {
-          "summary": "Fetches all customers",
+          "summary": "Get all customers",
+          "notes": "This lists all customers, sortable by record attributes",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "first_name",
+              "type": "string",
+              "description": "first_name",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "last_name",
+              "type": "string",
+              "description": "last_name",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "id",
+              "type": "integer",
+              "description": "id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "created_at",
+              "type": "string",
+              "description": "created_at",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "updated_at",
+              "type": "string",
+              "description": "updated_at",
+              "required": false
+            }
+          ],
           "responseMessages": [
             {
-              "code": 401,
+              "code": 404,
               "responseModel": null,
-              "message": "Unauthorized"
-            },
-            {
-              "code": 406,
-              "responseModel": null,
-              "message": "The request you made is not acceptable"
-            },
-            {
-              "code": 500,
-              "responseModel": null,
-              "message": "Requested Range Not Satisfiable"
+              "message": "Not Found"
             }
           ],
           "nickname": "Api::V1::Customers#index",
