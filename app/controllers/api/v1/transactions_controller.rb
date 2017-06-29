@@ -29,13 +29,14 @@ class Api::V1::TransactionsController < ApplicationController
   end
 
   def index
-    return render json: Transaction.all if valid_search.empty?
-    render json: Transaction.where(valid_search)
+    @transactions = valid_search.empty? ? Transaction.all : Transaction.where(valid_search)
+    return render json: @transactions unless @transactions.empty?
   end
 
   def show
-
-    render json: Transaction.find_by(valid_search)
+    @transactions = Transaction.find_by(valid_search)
+    return render json: @transactions if @transactions
+    not_found
   end
 
   private
