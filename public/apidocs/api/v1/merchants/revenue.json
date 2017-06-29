@@ -37,6 +37,7 @@
                     "paramType": "query",
                     "name": "date",
                     "type": "string",
+                    "format": "date-time",
                     "description": "date",
                     "required": false
                 }],
