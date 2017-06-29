@@ -35,21 +35,14 @@
             {
               "paramType": "query",
               "name": "created_at",
-              "type": "datetime",
+              "type": "string",
               "description": "created_at",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
-              "type": "datetime",
-              "description": "updated_at",
-              "required": false
-            },
-            {
-              "paramType": "query",
-              "name": "find",
-              "type": "datetime",
+              "name": "updated_at",
+              "type": "string",
               "description": "updated_at",
               "required": false
             }
@@ -59,11 +52,6 @@
               "code": 404,
               "responseModel": null,
               "message": "Not Found"
-            },
-            {
-              "code": 406,
-              "responseModel": null,
-              "message": "Not Acceptable"
             }
           ],
           "nickname": "Api::V1::Invoices#show",
@@ -119,11 +107,6 @@
               "code": 404,
               "responseModel": null,
               "message": "Not Found"
-            },
-            {
-              "code": 406,
-              "responseModel": null,
-              "message": "Not Acceptable"
             }
           ],
           "nickname": "Api::V1::Invoices#index",
