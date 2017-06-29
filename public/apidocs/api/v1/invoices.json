@@ -5,7 +5,7 @@
   "resourcePath": "invoices",
   "apis": [
     {
-      "path": "/api/v1/invoices/find",
+      "path": "/api/v1/invoices/find.json",
       "operations": [
         {
           "summary": "Fetches single invoice item",
@@ -13,23 +13,37 @@
           "parameters": [
             {
               "paramType": "query",
-              "name": "find",
+              "name": "id",
+              "type": "integer",
+              "description": "id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "customer_id",
               "type": "integer",
               "description": "customer_id",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "merchant_id",
               "type": "integer",
               "description": "merchant_id",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "created_at",
               "type": "datetime",
               "description": "created_at",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "find",
+              "type": "datetime",
+              "description": "updated_at",
               "required": false
             },
             {
@@ -58,7 +72,7 @@
       ]
     },
     {
-      "path": "/api/v1/invoices/find_all",
+      "path": "/api/v1/invoices/find_all.json",
       "operations": [
         {
           "summary": "Fetches all invoices",
@@ -66,36 +80,36 @@
           "parameters": [
             {
               "paramType": "query",
-              "name": "find",
+              "name": "customer_id",
               "type": "integer",
               "description": "customer_id",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "merchant_id",
               "type": "integer",
               "description": "merchant_id",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "id",
               "type": "integer",
               "description": "id",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
-              "type": "datetime",
+              "name": "created_at",
+              "type": "string",
               "description": "created_at",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
-              "type": "datetime",
+              "name": "updated_at",
+              "type": "string",
               "description": "updated_at",
               "required": false
             }
