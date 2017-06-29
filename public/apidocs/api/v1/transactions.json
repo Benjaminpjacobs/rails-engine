@@ -26,6 +26,7 @@
                         "paramType": "query",
                         "name": "credit_card_number",
                         "type": "string",
+                        "format": "date-time",
                         "description": "credit_card_number",
                         "required": false
                     },
@@ -48,7 +49,6 @@
                         "paramType": "query",
                         "name": "updated_at",
                         "type": "string",
-                        "format": "date-time",
                         "description": "updated_at",
                         "required": false
                     }
@@ -123,3 +123,4 @@
         }
     ],
     "authorizations": null
+}

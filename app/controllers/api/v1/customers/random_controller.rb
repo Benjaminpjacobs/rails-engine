@@ -1,4 +1,4 @@
-class Api::V1::Customer::RandomController < ApplicationController
+class Api::V1::Customers::RandomController < ApplicationController
   include Swagger::Docs::Methods
 
   swagger_controller :customer_random_controller, 'Customer Random Controller'
