@@ -9,7 +9,6 @@
       "operations": [
         {
           "summary": "Fetches single invoice item",
-          "notes": "This returns a single invoice item record by attributes",
           "parameters": [
             {
               "paramType": "query",
@@ -47,6 +46,7 @@
               "required": false
             }
           ],
+          "notes": "This returns a single invoice item record by attributes",
           "responseMessages": [
             {
               "code": 404,
@@ -64,7 +64,6 @@
       "operations": [
         {
           "summary": "Fetches all invoices",
-          "notes": "This lists all invoices, sortable by record attributes",
           "parameters": [
             {
               "paramType": "query",
@@ -102,6 +101,7 @@
               "required": false
             }
           ],
+          "notes": "This lists all invoices, sortable by record attributes",
           "responseMessages": [
             {
               "code": 404,

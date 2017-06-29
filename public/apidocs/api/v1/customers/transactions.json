@@ -8,7 +8,7 @@
       "path": "/api/v1/customers/{id}/transactions.json",
       "operations": [
         {
-          "summary": "Fetches transactions associated with specific customer",
+          "summary": "Fetches a collection of associated transactions",
           "parameters": [
             {
               "paramType": "query",

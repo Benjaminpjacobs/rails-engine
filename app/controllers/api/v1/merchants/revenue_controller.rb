@@ -5,14 +5,13 @@ class Api::V1::Merchants::RevenueController < ApplicationController
   swagger_controller :merchants, 'Merchants Revenue Controller'
 
   swagger_api :index do
-    summary "Fetches total revenue across merchants"
-    notes "This returns a single value for total revenue, can be scoped to a date"
-    param :query, :date, :string, :optional, "date"
+    summary "Fetches the total revenue for a date across all merchants"
+    param :query, :date, :string, :required, "date"
   end
 
   swagger_api :show do
-    summary "Fetches total revenue across merchants"
-    notes "This returns a single value for total revenue, can be scoped to a date"
+    summary "Fetches the total revenue for that merchant across all transactions"
+    notes "This query can be scoped to a single date"
     param :path, :id, :integer, :required, "id"
     param :query, :date, :string, :optional, "date"
   end

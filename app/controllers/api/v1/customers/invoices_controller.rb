@@ -4,7 +4,7 @@ class Api::V1::Customers::InvoicesController < ApplicationController
   swagger_controller :customers, "Customers Invoices Controller"
 
   swagger_api :index do
-    summary "Fetches invoices associated with specific customer"
+    summary "Fetches a collection of associated invoices"
     param :query, :id, :integer, :optional, "id"
     response :not_found
   end

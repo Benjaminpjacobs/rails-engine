@@ -8,7 +8,7 @@
       "path": "/api/v1/items/{id}/merchant.json",
       "operations": [
         {
-          "summary": "Fetches merchant associated with item",
+          "summary": "Fetches the associated merchant",
           "parameters": [
             {
               "paramType": "query",

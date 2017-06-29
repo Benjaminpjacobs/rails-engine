@@ -4,7 +4,7 @@ class Api::V1::Items::MerchantsController < ApplicationController
   swagger_controller :items, "Items Merchants Controller"
 
   swagger_api :show do
-    summary "Fetches merchant associated with item"
+    summary "Fetches the associated merchant"
     param :query, :id, :integer, :optional, "id"
 
     response :not_found

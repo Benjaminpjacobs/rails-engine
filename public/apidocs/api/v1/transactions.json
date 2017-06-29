@@ -9,7 +9,6 @@
       "operations": [
         {
           "summary": "Fetches single transaction",
-          "notes": "This returns a single transaction record by attributes",
           "parameters": [
             {
               "paramType": "query",
@@ -54,6 +53,7 @@
               "required": false
             }
           ],
+          "notes": "This returns a single transaction record by attributes",
           "responseMessages": [
             {
               "code": 404,
@@ -71,7 +71,6 @@
       "operations": [
         {
           "summary": "Fetches all transactions",
-          "notes": "This lists all transactions, sortable by record attributes",
           "parameters": [
             {
               "paramType": "query",
@@ -116,6 +115,7 @@
               "required": false
             }
           ],
+          "notes": "This lists all transactions, sortable by record attributes",
           "responseMessages": [
             {
               "code": 404,

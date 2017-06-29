@@ -9,7 +9,6 @@
       "operations": [
         {
           "summary": "Fetches customers with pending invoices",
-          "notes": "This returns a list of customers with invoices that have no successful transactions",
           "parameters": [
             {
               "paramType": "path",
@@ -19,6 +18,7 @@
               "required": true
             }
           ],
+          "notes": "Returns a collection of customers which have unpaid invoices. An unpaid invoice has no transactions with a result of success.",
           "nickname": "Api::V1::Merchants::CustomersWithPendingInvoices#index",
           "method": "get"
         }

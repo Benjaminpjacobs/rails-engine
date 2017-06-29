@@ -4,7 +4,7 @@ class Api::V1::Customers::TransactionsController < ApplicationController
   swagger_controller :customers, "Customers Transactions Controller"
 
   swagger_api :index do
-    summary "Fetches transactions associated with specific customer"
+    summary "Fetches a collection of associated transactions"
     param :query, :id, :integer, :optional, "id"
 
     response :not_found

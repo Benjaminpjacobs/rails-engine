@@ -8,7 +8,7 @@
       "path": "/api/v1/invoice_items/{id}/item.json",
       "operations": [
         {
-          "summary": "Fetches item associated with specific invoice item",
+          "summary": "Fetches the associated item",
           "parameters": [
             {
               "paramType": "query",

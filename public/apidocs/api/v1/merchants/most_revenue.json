@@ -8,8 +8,7 @@
       "path": "/api/v1/merchants/most_revenue.json",
       "operations": [
         {
-          "summary": "Fetches merchants ranked by most revenue",
-          "notes": "This returns the merchants listed by total revenue, can be limited in quantity",
+          "summary": "Fetches the top merchants ranked by total revenue",
           "parameters": [
             {
               "paramType": "query",
@@ -19,6 +18,7 @@
               "required": false
             }
           ],
+          "notes": "This query can be limited in quantity",
           "nickname": "Api::V1::Merchants::MostRevenue#index",
           "method": "get"
         }

@@ -8,7 +8,7 @@
       "path": "/api/v1/items/most_items.json",
       "operations": [
         {
-          "summary": "Fetches items ranked by number of items sold",
+          "summary": "Fetches the top item instances ranked by total number sold",
           "parameters": [
             {
               "paramType": "query",

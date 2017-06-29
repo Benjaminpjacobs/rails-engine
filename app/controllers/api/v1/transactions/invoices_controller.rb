@@ -4,8 +4,7 @@ class Api::V1::Transactions::InvoicesController < ApplicationController
   swagger_controller :transactions, 'Transactions Invoices Controller'
   
   swagger_api :show do
-    summary "Fetches invoices for a transaction"
-    notes "This returns a single invoice record for a transaction"
+    summary "Fetches the associated invoice"
     param :query , :id, :integer, :required, "id"
     response :not_found
   end

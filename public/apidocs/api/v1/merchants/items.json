@@ -8,8 +8,7 @@
       "path": "/api/v1/merchants/{id}/items.json",
       "operations": [
         {
-          "summary": "Fetches items associated with single merchant",
-          "notes": "This returns the items sold by a single merchant",
+          "summary": "Fetches a collection of items associated with merchant",
           "parameters": [
             {
               "paramType": "path",

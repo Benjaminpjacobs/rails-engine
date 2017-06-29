@@ -5,7 +5,7 @@ class Api::V1::Merchants::CustomersWithPendingInvoicesController < ApplicationCo
 
   swagger_api :index do
     summary "Fetches customers with pending invoices"
-    notes "This returns a list of customers with invoices that have no successful transactions"
+    notes "Returns a collection of customers which have unpaid invoices. An unpaid invoice has no transactions with a result of success."
 
     param :path, :id, :integer, :required, "id"
   end

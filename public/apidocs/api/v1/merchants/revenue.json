@@ -8,8 +8,7 @@
       "path": "/api/v1/merchants/{id}/revenue.json",
       "operations": [
         {
-          "summary": "Fetches total revenue across merchants",
-          "notes": "This returns a single value for total revenue, can be scoped to a date",
+          "summary": "Fetches the total revenue for that merchant across all transactions",
           "parameters": [
             {
               "paramType": "path",
@@ -26,6 +25,7 @@
               "required": false
             }
           ],
+          "notes": "This query can be scoped to a single date",
           "nickname": "Api::V1::Merchants::Revenue#show",
           "method": "get"
         }
@@ -35,15 +35,14 @@
       "path": "/api/v1/merchants/revenue.json",
       "operations": [
         {
-          "summary": "Fetches total revenue across merchants",
-          "notes": "This returns a single value for total revenue, can be scoped to a date",
+          "summary": "Fetches the total revenue for a date across all merchants",
           "parameters": [
             {
               "paramType": "query",
               "name": "date",
               "type": "string",
               "description": "date",
-              "required": false
+              "required": true
             }
           ],
           "nickname": "Api::V1::Merchants::Revenue#index",

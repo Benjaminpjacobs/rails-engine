@@ -8,7 +8,7 @@
       "path": "/api/v1/items/most_revenue.json",
       "operations": [
         {
-          "summary": "Fetches items ranked by most revenue generated",
+          "summary": "Fetches the top items ranked by total revenue generated",
           "parameters": [
             {
               "paramType": "query",

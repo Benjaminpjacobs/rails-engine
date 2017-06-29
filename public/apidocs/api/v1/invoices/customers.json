@@ -8,7 +8,7 @@
       "path": "/api/v1/invoices/{id}/customer.json",
       "operations": [
         {
-          "summary": "Fetches customer associated with specific invoice",
+          "summary": "Fetches the associated customer",
           "parameters": [
             {
               "paramType": "query",

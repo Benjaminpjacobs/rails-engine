@@ -8,7 +8,7 @@
       "path": "/api/v1/invoices/{id}/merchant.json",
       "operations": [
         {
-          "summary": "Fetches merchant associated with specific invoice",
+          "summary": "Fetches the associated merchant",
           "parameters": [
             {
               "paramType": "query",

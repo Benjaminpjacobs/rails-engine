@@ -9,7 +9,6 @@
       "operations": [
         {
           "summary": "Fetches single customer",
-          "notes": "This returns a single customer record by attributes",
           "parameters": [
             {
               "paramType": "query",
@@ -47,6 +46,7 @@
               "required": false
             }
           ],
+          "notes": "This returns a single customer record by attributes",
           "responseMessages": [
             {
               "code": 404,
@@ -64,7 +64,6 @@
       "operations": [
         {
           "summary": "Get all customers",
-          "notes": "This lists all customers, sortable by record attributes",
           "parameters": [
             {
               "paramType": "query",
@@ -102,6 +101,7 @@
               "required": false
             }
           ],
+          "notes": "This lists all customers, sortable by record attributes",
           "responseMessages": [
             {
               "code": 404,

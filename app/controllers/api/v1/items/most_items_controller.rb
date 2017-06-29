@@ -5,7 +5,7 @@ class Api::V1::Items::MostItemsController < ApplicationController
   swagger_controller :items, "Items Most Items Controller"
 
   swagger_api :index do
-    summary "Fetches items ranked by number of items sold"
+    summary "Fetches the top item instances ranked by total number sold"
     param :query, :id, :integer, :optional, "id"
 
     response :not_found

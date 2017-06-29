@@ -9,7 +9,6 @@
       "operations": [
         {
           "summary": "Fetches single merchant",
-          "notes": "This returns a single merchant record by attributes",
           "parameters": [
             {
               "paramType": "query",
@@ -40,6 +39,7 @@
               "required": false
             }
           ],
+          "notes": "This returns a single merchant record by attributes",
           "responseMessages": [
             {
               "code": 404,
@@ -57,7 +57,6 @@
       "operations": [
         {
           "summary": "Fetches all merchants",
-          "notes": "This lists all merchants, sortable by record attributes",
           "parameters": [
             {
               "paramType": "query",
@@ -88,6 +87,7 @@
               "required": false
             }
           ],
+          "notes": "This lists all merchants, sortable by record attributes",
           "responseMessages": [
             {
               "code": 404,

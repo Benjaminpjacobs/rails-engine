@@ -8,8 +8,7 @@
       "path": "/api/v1/merchants/{id}/invoices.json",
       "operations": [
         {
-          "summary": "Fetches invoices associated with single merchant",
-          "notes": "This returns the invoices from a single merchant",
+          "summary": "Fetches a collection of Invoices associated with merchant",
           "parameters": [
             {
               "paramType": "path",
@@ -19,6 +18,7 @@
               "required": true
             }
           ],
+          "notes": "Returns a collection of invoices associated with that merchant from their known orders",
           "nickname": "Api::V1::Merchants::Invoices#index",
           "method": "get"
         }

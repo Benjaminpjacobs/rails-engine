@@ -8,8 +8,7 @@
       "path": "/api/v1/transactions/{id}/invoice.json",
       "operations": [
         {
-          "summary": "Fetches invoices for a transaction",
-          "notes": "This returns a single invoice record for a transaction",
+          "summary": "Fetches the associated invoice",
           "parameters": [
             {
               "paramType": "query",
