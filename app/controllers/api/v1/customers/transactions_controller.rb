@@ -1,7 +1,7 @@
 class Api::V1::Customers::TransactionsController < ApplicationController
   include Swagger::Docs::Methods
   
-  swagger_controller :customers_transactions, "Customers Transactions Controller"
+  swagger_controller :customers, "Customers Transactions Controller"
 
   swagger_api :index do
     summary "Fetches transactions associated with specific customer"

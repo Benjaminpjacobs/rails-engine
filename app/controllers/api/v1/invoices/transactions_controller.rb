@@ -1,7 +1,7 @@
 class Api::V1::Invoices::TransactionsController < ApplicationController
   include Swagger::Docs::Methods
   
-  swagger_controller :invoices_transactions, "Invoices Transactions Controller"
+  swagger_controller :invoices, "Invoices Transactions Controller"
 
   swagger_api :index do
     summary "Fetches transactions associated with specific invoice"

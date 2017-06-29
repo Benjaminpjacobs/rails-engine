@@ -1,7 +1,7 @@
 class Api::V1::Merchants::MostRevenueController < ApplicationController
   include Swagger::Docs::Methods
 
-  swagger_controller :merchants_most_revenue, 'Merchants Most Revenue Controller'
+  swagger_controller :merchants, 'Merchants Most Revenue Controller'
 
   swagger_api :index do
     summary "Fetches merchants ranked by most revenue"

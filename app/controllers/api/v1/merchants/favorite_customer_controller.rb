@@ -1,7 +1,7 @@
 class Api::V1::Merchants::FavoriteCustomerController < ApplicationController
   include Swagger::Docs::Methods
 
-    swagger_controller :merchants_favorite, 'Merchants Favorite Customer Controller'
+    swagger_controller :merchants, 'Merchants Favorite Customer Controller'
 
   swagger_api :show do
     summary "Fetches the favorite customer"

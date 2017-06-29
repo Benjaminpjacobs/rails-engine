@@ -1,7 +1,7 @@
 class Api::V1::Merchants::ItemsController < ApplicationController
 include Swagger::Docs::Methods
 
-  swagger_controller :merchants_items, 'Merchants Items Controller'
+  swagger_controller :merchants, 'Merchants Items Controller'
 
   swagger_api :index do
     summary "Fetches items associated with single merchant"

@@ -1,7 +1,7 @@
 class Api::V1::Merchants::CustomersWithPendingInvoicesController < ApplicationController
   include Swagger::Docs::Methods
 
-  swagger_controller :merchants_customers_pending_invoices, 'Merchants Customers With Pending Invoices Controller'
+  swagger_controller :merchants, 'Merchants Customers With Pending Invoices Controller'
 
   swagger_api :index do
     summary "Fetches customers with pending invoices"

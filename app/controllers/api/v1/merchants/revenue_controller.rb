@@ -2,7 +2,7 @@ class Api::V1::Merchants::RevenueController < ApplicationController
   include DateSearch
   include Swagger::Docs::Methods
 
-  swagger_controller :merchants_revenue, 'Merchants Revenue Controller'
+  swagger_controller :merchants, 'Merchants Revenue Controller'
 
   swagger_api :index do
     summary "Fetches total revenue across merchants"

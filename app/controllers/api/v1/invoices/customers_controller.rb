@@ -1,7 +1,7 @@
 class Api::V1::Invoices::CustomersController < ApplicationController
   include Swagger::Docs::Methods
   
-  swagger_controller :invoice_customer, "Invoices Customer Controller"
+  swagger_controller :invoices, "Invoices Customer Controller"
 
   swagger_api :index do
     summary "Fetches customer associated with specific invoice"

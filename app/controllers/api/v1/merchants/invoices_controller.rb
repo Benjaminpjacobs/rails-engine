@@ -1,7 +1,7 @@
 class Api::V1::Merchants::InvoicesController < ApplicationController
   include Swagger::Docs::Methods
 
-  swagger_controller :merchants_invoices, 'Merchants Invoices Controller'
+  swagger_controller :merchants, 'Merchants Invoices Controller'
 
   swagger_api :index do
     summary "Fetches invoices associated with single merchant"
