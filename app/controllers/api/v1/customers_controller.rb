@@ -1,8 +1,6 @@
 class Api::V1::CustomersController < ApplicationController
   include DateSearch
   include Swagger::Docs::Methods
-
-  # respond_to :json
   swagger_controller :customers, 'Customers Controller'
 
   swagger_api :index do
