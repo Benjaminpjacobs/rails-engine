@@ -5,7 +5,7 @@ class Api::V1::Invoices::ItemsController < ApplicationController
 
   swagger_api :index do
     summary "Fetches items associated with specific invoice"
-    param :query, :id, :integer, :optional, "id"
+    param :query, :id, :integer, :required, "id"
 
     response :not_found
   end

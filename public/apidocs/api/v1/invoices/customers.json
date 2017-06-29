@@ -4,7 +4,32 @@
   "basePath": "https://sales-engine-api.herokuapp.com",
   "resourcePath": "customers",
   "apis": [
-
+    {
+      "path": "/api/v1/invoices/{id}/customer.json",
+      "operations": [
+        {
+          "summary": "Fetches customer associated with specific invoice",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "id",
+              "type": "integer",
+              "description": "id",
+              "required": true
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "nickname": "Api::V1::Invoices::Customers#show",
+          "method": "get"
+        }
+      ]
+    }
   ],
   "authorizations": null
 }

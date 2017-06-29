@@ -5,12 +5,13 @@ class Api::V1::Invoices::InvoiceItemsController < ApplicationController
 
   swagger_api :index do
     summary "Fetches invoice items associated with specific invoice"
-    param :query, :id, :integer, :optional, "id"
+    param :query, :id, :integer, :required, "id"
 
     response :not_found
   end
 
   def index
-    render json: InvoiceItem.where(invoice_id: params[:id])
+    # render json: InvoiceItem.where(invoice_id: params[:id])
+    render json: Invoice.find(params[:id]).invoices
   end
 end

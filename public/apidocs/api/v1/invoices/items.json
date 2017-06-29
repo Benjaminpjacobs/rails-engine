@@ -15,7 +15,7 @@
               "name": "id",
               "type": "integer",
               "description": "id",
-              "required": false
+              "required": true
             }
           ],
           "responseMessages": [

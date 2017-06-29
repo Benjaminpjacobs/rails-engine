@@ -5,7 +5,7 @@ class Api::V1::Invoices::CustomersController < ApplicationController
 
   swagger_api :show do
     summary "Fetches customer associated with specific invoice"
-    param :query, :id, :integer, :optional, "id"
+    param :query, :id, :integer, :required, "id"
 
     response :not_found
   end
