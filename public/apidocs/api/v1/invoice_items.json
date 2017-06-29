@@ -1,126 +1,133 @@
 {
-    "apiVersion": "1.0",
-    "swaggerVersion": "1.2",
-    "basePath": "http://localhost:3000",
-    "resourcePath": "invoice_items",
-    "apis": [{
-            "path": "/api/v1/invoice_items/find.json",
-            "operations": [{
-                "summary": "Fetches single invoice item",
-                "notes": "This returns a single invoice item record by attributes",
-                "parameters": [{
-                        "paramType": "query",
-                        "name": "id",
-                        "type": "integer",
-                        "description": "id",
-                        "required": false
-                    },
-                    {
-                        "paramType": "query",
-                        "name": "item_id",
-                        "type": "integer",
-                        "description": "item_id",
-                        "required": false
-                    },
-                    {
-                        "paramType": "query",
-                        "name": "invoice_id",
-                        "type": "integer",
-                        "description": "invoice_id",
-                        "required": false
-                    },
-                    {
-                        "paramType": "query",
-                        "name": "quantity",
-                        "type": "integer",
-                        "description": "quantity",
-                        "required": false
-                    },
-                    {
-                        "paramType": "query",
-                        "name": "created_at",
-                        "type": "string",
-                        "format": "date-time",
-                        "description": "created_at",
-                        "required": false
-                    },
-                    {
-                        "paramType": "query",
-                        "name": "updated_at",
-                        "type": "string",
-                        "format": "date-time",
-                        "description": "updated_at",
-                        "required": false
-                    }
-                ],
-                "responseMessages": [{
-                    "code": 404,
-                    "responseModel": null,
-                    "message": "Not Found"
-                }],
-                "nickname": "Api::V1::InvoiceItems#show",
-                "method": "get"
-            }]
-        },
+  "apiVersion": "1.0",
+  "swaggerVersion": "1.2",
+  "basePath": "https://sales-engine-api.herokuapp.com",
+  "resourcePath": "invoice_items",
+  "apis": [
+    {
+      "path": "/api/v1/invoice_items/find.json",
+      "operations": [
         {
-            "path": "/api/v1/invoice_items/find_all.json",
-            "operations": [{
-                "summary": "Fetches all invoice items",
-                "notes": "This lists all invoice items, sortable by record attributes",
-                "parameters": [{
-                        "paramType": "query",
-                        "name": "item_id",
-                        "type": "integer",
-                        "description": "item_id",
-                        "required": false
-                    },
-                    {
-                        "paramType": "query",
-                        "name": "invoice_id",
-                        "type": "integer",
-                        "description": "invoice_id",
-                        "required": false
-                    },
-                    {
-                        "paramType": "query",
-                        "name": "quantity",
-                        "type": "integer",
-                        "description": "quantity",
-                        "required": false
-                    },
-                    {
-                        "paramType": "query",
-                        "name": "id",
-                        "type": "integer",
-                        "description": "id",
-                        "required": false
-                    },
-                    {
-                        "paramType": "query",
-                        "name": "created_at",
-                        "type": "string",
-                        "format": "date-time",
-                        "description": "created_at",
-                        "required": false
-                    },
-                    {
-                        "paramType": "query",
-                        "name": "updated_at",
-                        "type": "string",
-                        "format": "date-time",
-                        "description": "updated_at",
-                        "required": false
-                    }
-                ],
-                "responseMessages": [{
-                    "code": 404,
-                    "responseModel": null,
-                    "message": "Not Found"
-                }],
-                "nickname": "Api::V1::InvoiceItems#index",
-                "method": "get"
-            }]
+          "summary": "Fetches single invoice item",
+          "notes": "This returns a single invoice item record by attributes",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "id",
+              "type": "integer",
+              "description": "id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "item_id",
+              "type": "integer",
+              "description": "item_id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "invoice_id",
+              "type": "integer",
+              "description": "invoice_id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "quantity",
+              "type": "integer",
+              "description": "quantity",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "created_at",
+              "type": "string",
+              "description": "created_at",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "updated_at",
+              "type": "string",
+              "description": "updated_at",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "nickname": "Api::V1::InvoiceItems#show",
+          "method": "get"
         }
-    ],
-    "authorizations": null
+      ]
+    },
+    {
+      "path": "/api/v1/invoice_items/find_all.json",
+      "operations": [
+        {
+          "summary": "Fetches all invoice items",
+          "notes": "This lists all invoice items, sortable by record attributes",
+          "parameters": [
+            {
+              "paramType": "query",
+              "name": "item_id",
+              "type": "integer",
+              "description": "item_id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "invoice_id",
+              "type": "integer",
+              "description": "invoice_id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "quantity",
+              "type": "integer",
+              "description": "quantity",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "id",
+              "type": "integer",
+              "description": "id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "created_at",
+              "type": "string",
+              "description": "created_at",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "updated_at",
+              "type": "string",
+              "description": "updated_at",
+              "required": false
+            }
+          ],
+          "responseMessages": [
+            {
+              "code": 404,
+              "responseModel": null,
+              "message": "Not Found"
+            }
+          ],
+          "nickname": "Api::V1::InvoiceItems#index",
+          "method": "get"
+        }
+      ]
+    }
+  ],
+  "authorizations": null
 }
