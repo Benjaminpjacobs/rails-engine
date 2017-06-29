@@ -1,5 +1,13 @@
+class Swagger::Docs::Config
+  def self.transform_path(path, api_version)
+    # Make a distinction between the APIs and API documentation paths.
+    "apidocs/#{path}"
+  end
+end
+
 Swagger::Docs::Config.register_apis({
   "1.0" => {
+    :api_extension_type => :json,
     :api_file_path => "public/apidocs",
     :base_path => "http://localhost:3000",
     :clean_directory => true,
@@ -7,7 +15,7 @@ Swagger::Docs::Config.register_apis({
     :attributes => {
       :info => {
         "title" => "Rails Engine",
-        "description" => "Endpoints for record, relationship and bussiness logic for included sales dataset",
+        "description" => "Endpoints for record, relationship and business logic for included sales data-set",
         "contact" => "benjaminpjacobs@gmail.com",
         "license" => "MIT",
         "licenseUrl" => "https://opensource.org/licenses/MIT"

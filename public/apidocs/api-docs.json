@@ -4,34 +4,36 @@
   "basePath": "http://localhost:3000",
   "apis": [
     {
-      "path": "/api/v1/customers.{format}",
-      "description": "Customers"
+      "path": "/apidocs/api/v1/customers.{format}",
+      "description": "Customers Controller"
     },
     {
-      "path": "/api/v1/merchants.{format}",
-      "description": "Merchants"
+      "path": "/apidocs/api/v1/merchants.{format}",
+      "description": "Merchants Controller"
     },
     {
-      "path": "/api/v1/items.{format}",
-      "description": "Items"
+      "path": "/apidocs/api/v1/items.{format}",
+      "description": "Items Controller"
     },
     {
-      "path": "/api/v1/invoices.{format}",
-      "description": "Invoices"
+      "path": "/apidocs/api/v1/invoices.{format}",
+      "description": "Invoices Controller"
     },
     {
-      "path": "/api/v1/invoice_items.{format}",
-      "description": "Invoice items"
+      "path": "/apidocs/api/v1/invoice_items.{format}",
+      "description": "Invoice Items Controller"
     },
     {
-      "path": "/api/v1/transactions.{format}",
-      "description": "Transactions"
+      "path": "/apidocs/api/v1/transactions.{format}",
+      "description": "Transactions Controller"
     }
   ],
   "authorizations": null,
   "info": {
     "title": "Rails Engine",
-    "description": "Test",
-    "contact": "benjaminpjacobs@gmail.com"
+    "description": "Endpoints for record, relationship and business logic for included sales data-set",
+    "contact": "benjaminpjacobs@gmail.com",
+    "license": "MIT",
+    "licenseUrl": "https://opensource.org/licenses/MIT"
   }
 }

@@ -5,7 +5,7 @@
   "resourcePath": "items",
   "apis": [
     {
-      "path": "/api/v1/items/find",
+      "path": "/api/v1/items/find.json",
       "operations": [
         {
           "summary": "Fetches single item",
@@ -13,35 +13,42 @@
           "parameters": [
             {
               "paramType": "query",
-              "name": "find",
+              "name": "id",
+              "type": "integer",
+              "description": "id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "name",
               "type": "string",
               "description": "name",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "description",
               "type": "string",
               "description": "description",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "merchant_id",
               "type": "integer",
               "description": "merchant_id",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "created_at",
               "type": "datetime",
               "description": "created_at",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "updated_at",
               "type": "datetime",
               "description": "updated_at",
               "required": false
@@ -65,7 +72,7 @@
       ]
     },
     {
-      "path": "/api/v1/items/find_all",
+      "path": "/api/v1/items/find_all.json",
       "operations": [
         {
           "summary": "Fetches all items",
@@ -73,42 +80,42 @@
           "parameters": [
             {
               "paramType": "query",
-              "name": "find",
+              "name": "name",
               "type": "string",
               "description": "name",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "description",
               "type": "string",
               "description": "description",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "merchant_id",
               "type": "integer",
               "description": "merchant_id",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "id",
               "type": "integer",
               "description": "id",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "created_at",
               "type": "datetime",
               "description": "created_at",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "updated_at",
               "type": "datetime",
               "description": "updated_at",
               "required": false

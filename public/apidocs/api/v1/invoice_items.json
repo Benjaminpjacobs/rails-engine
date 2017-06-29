@@ -5,7 +5,7 @@
   "resourcePath": "invoice_items",
   "apis": [
     {
-      "path": "/api/v1/invoice_items/find",
+      "path": "/api/v1/invoice_items/find.json",
       "operations": [
         {
           "summary": "Fetches single invoice item",
@@ -13,35 +13,42 @@
           "parameters": [
             {
               "paramType": "query",
-              "name": "find",
+              "name": "id",
+              "type": "integer",
+              "description": "id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "item_id",
               "type": "integer",
               "description": "item_id",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "invoice_id",
               "type": "integer",
               "description": "invoice_id",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "quantity",
               "type": "integer",
               "description": "quantity",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "created_at",
               "type": "datetime",
               "description": "created_at",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "updated_at",
               "type": "datetime",
               "description": "updated_at",
               "required": false
@@ -65,7 +72,7 @@
       ]
     },
     {
-      "path": "/api/v1/invoice_items/find_all",
+      "path": "/api/v1/invoice_items/find_all.json",
       "operations": [
         {
           "summary": "Fetches all invoice items",
@@ -73,42 +80,42 @@
           "parameters": [
             {
               "paramType": "query",
-              "name": "find",
+              "name": "item_id",
               "type": "integer",
               "description": "item_id",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "invoice_id",
               "type": "integer",
               "description": "invoice_id",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "quantity",
               "type": "integer",
               "description": "quantity",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "id",
               "type": "integer",
               "description": "id",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "created_at",
               "type": "datetime",
               "description": "created_at",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "updated_at",
               "type": "datetime",
               "description": "updated_at",
               "required": false

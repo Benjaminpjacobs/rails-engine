@@ -5,7 +5,7 @@
   "resourcePath": "merchants",
   "apis": [
     {
-      "path": "/api/v1/merchants/find",
+      "path": "/api/v1/merchants/find.json",
       "operations": [
         {
           "summary": "Fetches single merchant",
@@ -13,21 +13,28 @@
           "parameters": [
             {
               "paramType": "query",
-              "name": "find",
+              "name": "id",
+              "type": "integer",
+              "description": "id",
+              "required": false
+            },
+            {
+              "paramType": "query",
+              "name": "name",
               "type": "string",
               "description": "name",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "created_at",
               "type": "datetime",
               "description": "created_at",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "updated_at",
               "type": "datetime",
               "description": "updated_at",
               "required": false
@@ -51,7 +58,7 @@
       ]
     },
     {
-      "path": "/api/v1/merchants/find_all",
+      "path": "/api/v1/merchants/find_all.json",
       "operations": [
         {
           "summary": "Fetches all merchants",
@@ -59,28 +66,28 @@
           "parameters": [
             {
               "paramType": "query",
-              "name": "find",
+              "name": "name",
               "type": "string",
               "description": "name",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "id",
               "type": "integer",
               "description": "id",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "created_at",
               "type": "datetime",
               "description": "created_at",
               "required": false
             },
             {
               "paramType": "query",
-              "name": "find",
+              "name": "updated_at",
               "type": "datetime",
               "description": "updated_at",
               "required": false
