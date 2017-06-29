@@ -40,12 +40,40 @@
       "description": "Transactions Invoices Controller"
     },
     {
+      "path": "/apidocs/api/v1/invoices/items.{format}",
+      "description": "Invoices Items Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/invoices/transactions.{format}",
+      "description": "Invoices Transactions Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/invoices/invoice_items.{format}",
+      "description": "Invoices Invoice items Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/invoices/customers.{format}",
+      "description": "Invoices Customer Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/invoices/merchants.{format}",
+      "description": "Invoices Merchant Controller"
+    },
+    {
       "path": "/apidocs/api/v1/items/invoice_items.{format}",
       "description": "Items Invoice Items Controller"
     },
     {
       "path": "/apidocs/api/v1/items/merchants.{format}",
       "description": "Items Merchants Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/items/best_day.{format}",
+      "description": "Items Best Day Controller"
+    },
+    {
+      "path": "/apidocs/api/v1/items/most_items.{format}",
+      "description": "Items Most Items Controller"
     },
     {
       "path": "/apidocs/api/v1/customers.{format}",
