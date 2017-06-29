@@ -1,11 +1,11 @@
 class Api::V1::Invoices::MerchantsController < ApplicationController
   include Swagger::Docs::Methods
   
-  swagger_controller :invoices_merchant, "Invoices Merchant Controller"
+  swagger_controller :invoices, "Invoices Merchant Controller", resource_path: "invoices"
 
   swagger_api :show do
-    summary "Fetches merchant associated with specific invoice"
-    param :query, :id, :integer, :optional, "id"
+    summary "Fetches the associated merchant"
+    param :query, :id, :integer, :required, "id"
 
     response :not_found
   end

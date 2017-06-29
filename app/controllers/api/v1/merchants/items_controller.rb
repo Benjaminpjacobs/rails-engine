@@ -1,11 +1,10 @@
 class Api::V1::Merchants::ItemsController < ApplicationController
 include Swagger::Docs::Methods
 
-  swagger_controller :merchants_items, 'Merchants Items Controller'
+  swagger_controller :merchants, 'Merchants Items Controller', resource_path: "merchants"
 
   swagger_api :index do
-    summary "Fetches items associated with single merchant"
-    notes "This returns the items sold by a single merchant"
+    summary "Fetches a collection of items associated with merchant"
     param :path, :id, :integer, :required, "id"
   end
 

@@ -9,7 +9,7 @@ Swagger::Docs::Config.register_apis({
   "1.0" => {
     :api_extension_type => :json,
     :api_file_path => "public/apidocs",
-    :base_path => "http://localhost:3000",
+    :base_path => "https://sales-engine-api.herokuapp.com",
     :clean_directory => true,
     :base_api_controller => ActionController::API,
     :attributes => {

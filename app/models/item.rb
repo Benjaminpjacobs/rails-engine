@@ -18,10 +18,11 @@ class Item < ApplicationRecord
   
   def best_day
     invoices
+      .select('invoices.created_at')
       .joins(:invoice_items)
-      .group(:id)
-      .group(:created_at)
-      .order("sum(invoice_items.quantity) DESC")
+      .group(:id, :created_at)
+      .order("sum(invoice_items.quantity) DESC, invoices.created_at ASC")
+      .limit(1)
       .first
       .created_at
   end

@@ -1,11 +1,11 @@
 class Api::V1::Merchants::InvoicesController < ApplicationController
   include Swagger::Docs::Methods
 
-  swagger_controller :merchants_invoices, 'Merchants Invoices Controller'
+  swagger_controller :merchants, 'Merchants Invoices Controller', resource_path: "merchants"
 
   swagger_api :index do
-    summary "Fetches invoices associated with single merchant"
-    notes "This returns the invoices from a single merchant"
+    summary "Fetches a collection of Invoices associated with merchant"
+    notes "Returns a collection of invoices associated with that merchant from their known orders"
     param :path, :id, :integer, :required, "id"
   end
 

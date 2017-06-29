@@ -1,11 +1,10 @@
 class Api::V1::Merchants::FavoriteCustomerController < ApplicationController
   include Swagger::Docs::Methods
 
-    swagger_controller :merchants_favorite, 'Merchants Favorite Customer Controller'
+    swagger_controller :merchants, 'Merchants Favorite Customer Controller', resource_path: "merchants"
 
   swagger_api :show do
-    summary "Fetches the favorite customer"
-    notes "This returns a single customer based on most successful transactions with given merchant"
+    summary "Fetches the customer who has conducted the most total number of successful transactions."
 
     param :path, :id, :integer, :required, "id"
   end
