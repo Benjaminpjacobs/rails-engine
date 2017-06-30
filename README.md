@@ -13,7 +13,8 @@ A sales data api built with Rails 5.1 and Ruby 2.4.1. This engine serves up reco
 * ```bundle``` 
 * ```rake``` to run test suite.
 
-Interact with [Swagger UI](https://sales-engine-api.herokuapp.com/apidocs/index.html) for this API.
+Interact with this API at the [Swagger Application UI](https://sales-engine-api.herokuapp.com/apidocs/index.html) or on
+[Swagger Hub](https://app.swaggerhub.com/apis/Benjaminpjacobs/sales-engine-api/1.0.0).
 
 ---
 ## Endpoints accessible with this API:
