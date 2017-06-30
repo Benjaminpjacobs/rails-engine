@@ -10,6 +10,6 @@ class Api::V1::Merchants::MostRevenueController < ApplicationController
   end
 
   def index
-    return render json: Merchant.total_revenue(params[:quantity])
+    return render json: Merchant.by_total_revenue(params[:quantity])
   end
 end

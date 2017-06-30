@@ -41,8 +41,8 @@ class Api::V1::TransactionsController < ApplicationController
 
   private
 
-  def valid_search
-    params.permit(:id, :invoice_id, :credit_card_number, :result).merge(date_search)
-  end
+    def valid_search
+      params.permit(:id, :invoice_id, :credit_card_number, :result).merge(date_search)
+    end
 
 end

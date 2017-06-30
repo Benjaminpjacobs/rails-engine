@@ -12,6 +12,6 @@ class Api::V1::Items::MostItemsController < ApplicationController
   end
 
   def index
-    render json: Item.most_items(params[:quantity])
+    render json: Item.by_most_items(params[:quantity])
   end
 end

@@ -10,6 +10,6 @@ class Api::V1::Merchants::MostItemsController < ApplicationController
   end
 
   def index
-    return render json: Merchant.most_items(params[:quantity])
+    return render json: Merchant.by_most_items(params[:quantity])
   end
 end

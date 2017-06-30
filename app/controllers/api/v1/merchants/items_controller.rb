@@ -9,6 +9,6 @@ include Swagger::Docs::Methods
   end
 
   def index
-    render json: Item.where(merchant_id: params[:id])
+    render json: Merchant.find(params[:id]).items
   end
 end

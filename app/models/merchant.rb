@@ -5,7 +5,7 @@ class Merchant < ApplicationRecord
   has_many :customers, through: :invoices
   has_many :items
 
-  def self.total_revenue(qty)
+  def self.by_total_revenue(qty)
     joins(:invoices)
     .joins(invoices: [:transactions])
     .merge(Transaction.successful)
@@ -15,7 +15,7 @@ class Merchant < ApplicationRecord
     .limit(qty)
   end
 
-  def self.most_items(qty)
+  def self.by_most_items(qty)
     joins(invoices: :transactions)
       .merge(Transaction.successful)
       .joins("JOIN invoice_items ON invoice_items.invoice_id = invoices.id")

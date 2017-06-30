@@ -8,7 +8,7 @@ class Item < ApplicationRecord
 
   default_scope {order(:id)}
 
-  def self.most_revenue(limit)
+  def self.by_most_revenue(limit)
     unscoped
     .joins(:invoice_items)
     .group(:id)
@@ -27,7 +27,7 @@ class Item < ApplicationRecord
       .created_at
   end
 
-  def self.most_items(qty)
+  def self.by_most_items(qty)
    unscoped
      .joins(:invoice_items)
      .group(:id)
