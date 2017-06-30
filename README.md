@@ -1,6 +1,8 @@
 # Rails Engine
 
-A sales data api built with Rails 5.1 and Ruby 2.4.1. This engine serves up record, relationship and business intelligence JSON for the included dataset. To locally run the test suite:
+A sales data api built with Rails 5.1 and Ruby 2.4.1. This engine serves up record, relationship and business intelligence JSON for the included dataset. 
+
+To locally run the test suite:
 
 * Clone down this repo
 * Clone down [rails-engine spec harness](https://github.com/turingschool/rales_engine_spec_harness)
